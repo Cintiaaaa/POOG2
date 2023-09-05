@@ -28,8 +28,46 @@ public class ContaCorrente {
 		this.clienteVIP = clienteVIP;
 	}
 	
+	// método de saque
+	
+//	public boolean sacar(double valor)
+//	{
+//		if(this.saldo < valor)
+//		{
+//			return false;
+//		}
+//		else if(valor <= 0.0)
+//		{
+//			System.out.println("Valor inválido!");
+//			return false;
+//		}
+//		else
+//		{
+//			this.saldo-=valor;
+//			return true;
+//		}
+//	}
+	
+	// método de cobrança de taxa
+	
+//	public void gerarTaxa()
+//	{
+//		this.saldo-=13.90;
+//	}
+	
+	
+	//gets e sets
+	
+
+	public void setChequeEspecial(double chequeEspecial) {
+		this.chequeEspecial = chequeEspecial;
+	}
+	
+	// informações da conta
+	
 	public String toString() {
 		return "Número da conta: "+contaId+".\nAgência: "+agencia+".\nTitular: "+titular+".\nSaldo: R$"+saldo+".\nCheque Especial: "+chequeEspecial+".\nCliente VIP: "+clienteVIP+".";
 	}
+
 
 }

@@ -26,6 +26,15 @@ public class ContaPoupanca {
 		this.rendimento = rendimento;
 	}
 	
+	// método do rendimento da poupança
+	
+//	public void gerarRend()
+//	{
+//		this.saldo += saldo * 0.006;
+//	}
+	
+	// informações da conta
+	
 	public String toString() {
 		return "Número da conta: "+contaId+".\nAgência: "+agencia+".\nTitular: "+titular+".\nSaldo: R$"+saldo+".\nRendimento: "+rendimento+".";
 	}
