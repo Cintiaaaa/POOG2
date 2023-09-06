@@ -2,31 +2,19 @@ package br.com.poo.banco.pessoas;
 
 import java.util.Date;
 
-public class Presidente {
-	
-	private String nome;
-	private String cpf;
-	private String email;
-	private Date dataNasc;
-	private String cargo;
-	
-	//construtores
+public class Presidente extends Funcionario{
 	
 	public Presidente() {
-		
+		super();
+
 	}
 	public Presidente(String nome, String cpf, String email, Date dataNasc, String cargo) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.email = email;
-		this.dataNasc = dataNasc;
-		this.cargo = cargo;
+		super(nome, cpf, email, dataNasc, cargo);
 	}
 	
 	// gets
-	
 	public String getNome() {
-		return nome;
+		return this.getNome();
 	}
 	public String getCpf() {
 		return cpf;
