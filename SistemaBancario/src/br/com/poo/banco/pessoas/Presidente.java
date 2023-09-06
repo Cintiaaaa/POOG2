@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.logging.Level;
 
 public class Presidente extends Funcionario{
-	private Funcionario funcionario;
 	
 	public Presidente() {
 		super();
