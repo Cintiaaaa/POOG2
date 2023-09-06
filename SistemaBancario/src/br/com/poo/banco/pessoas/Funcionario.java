@@ -2,7 +2,7 @@ package br.com.poo.banco.pessoas;
 
 import java.util.Date;
 
-public class Funcionario {
+public class Funcionario  {
 
 	private String nome;
 	private String cpf;
