@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class Funcionario  {
 
-	private String nome;
+	protected String nome;
 	private String cpf;
 	private String email;
 	private Date dataNasc;
-	private String cargo;
+	protected String cargo;
 	
 	//construtor
 	public Funcionario() {

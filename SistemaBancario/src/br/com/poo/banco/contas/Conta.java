@@ -9,7 +9,7 @@ public class Conta {
 	private String contaId;
 	private String agencia;
 	private String titular;
-	private double saldo;
+	protected double saldo;
 	
 	
 	private static Logger logger = Logger.getLogger(Conta.class.getName());

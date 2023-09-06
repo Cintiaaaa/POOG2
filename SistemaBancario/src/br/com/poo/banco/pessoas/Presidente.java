@@ -1,8 +1,11 @@
 package br.com.poo.banco.pessoas;
+import java.util.logging.Logger;
 
 import java.util.Date;
+import java.util.logging.Level;
 
 public class Presidente extends Funcionario{
+	private Funcionario funcionario;
 	
 	public Presidente() {
 		super();
@@ -10,30 +13,17 @@ public class Presidente extends Funcionario{
 	}
 	public Presidente(String nome, String cpf, String email, Date dataNasc, String cargo) {
 		super(nome, cpf, email, dataNasc, cargo);
+		this.funcionario = funcionario;
 	}
 	
 	// gets
 	public String getNome() {
-		return this.getNome();
+		return nome;
 	}
-	public String getCpf() {
-		return cpf;
+
+	public Funcionario mudaCargo(Funcionario func, String cargo) {
+		func.cargo = cargo;
+		return func;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public Date getDataNasc() {
-		return dataNasc;
-	}
-	public String getCargo() {
-		return cargo;
-	}
-	
-	// set para promover / rebaixar pessoas
-	
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
-	
-	
 }
+
