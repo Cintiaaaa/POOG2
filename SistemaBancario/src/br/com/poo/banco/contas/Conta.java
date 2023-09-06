@@ -9,6 +9,8 @@ public class Conta {
 	private String contaId;
 	private String agencia;
 	private String titular;
+	private double saldo;
+	
 	
 	private static Logger logger = Logger.getLogger(Conta.class.getName());
 	
@@ -19,11 +21,13 @@ public class Conta {
 			
 		}
 		
-		public Conta(String contaId, String agencia, String titular) 
+		public Conta(String contaId, String agencia, String titular, double saldo) 
 		{
 			this.contaId = contaId;
 			this.agencia = agencia;
 			this.titular = titular;
+			this.saldo = saldo;
+			
 		}
 
 		// gets e sets
@@ -40,8 +44,17 @@ public class Conta {
 			return titular;
 		}
 		
+		public double getSaldo() {
+			return saldo;
+		}
+		
 		// informações da conta
 		
+
+		public static Logger getLogger() {
+			return logger;
+		}
+
 		public String toString() 
 		{
 			return "Número da conta: "+contaId+".\nAgência: "+agencia+".\nTitular: "+titular+".";

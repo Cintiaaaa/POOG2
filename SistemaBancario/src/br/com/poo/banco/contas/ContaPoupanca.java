@@ -4,10 +4,6 @@ package br.com.poo.banco.contas;
 
 public class ContaPoupanca {
 	
-	private String contaId;
-	private String agencia;
-	private String titular;
-	private double saldo;
 	private double rendimento;
 
 // construtores

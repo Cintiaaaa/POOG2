@@ -2,32 +2,23 @@ package br.com.poo.banco.contas;
 
 //definindo atributos da classe.
 
-public class ContaCorrente {
+public class ContaCorrente extends Conta {
 	
-	private String contaId;
-	private String agencia;
-	private String titular;
-	private double saldo;
 	private double chequeEspecial;
 	private boolean clienteVIP;
 	
 	// construtores
+	
+	public ContaCorrente() {
+		super();
+    }
 
-	public ContaCorrente() 
-	{
+	public ContaCorrente(String contaId, String agencia, String titular, double saldo, double chequeEspecial) {
+		super(contaId, agencia, titular, saldo);
+		this.chequeEspecial = chequeEspecial;	
+
+	}
 		
-	}
-	
-	public ContaCorrente(String contaId, String agencia, String titular, double saldo, double chequeEspecial, boolean clienteVIP) 
-	{
-		this.contaId = contaId;
-		this.agencia = agencia;
-		this.titular = titular;
-		this.saldo = saldo;
-		this.chequeEspecial = chequeEspecial;
-		this.clienteVIP = clienteVIP;
-	}
-	
 	// método de saque
 	
 //	public boolean sacar(double valor)
@@ -65,9 +56,5 @@ public class ContaCorrente {
 	
 	// informações da conta
 	
-	public String toString() {
-		return "Número da conta: "+contaId+".\nAgência: "+agencia+".\nTitular: "+titular+".\nSaldo: R$"+saldo+".\nCheque Especial: "+chequeEspecial+".\nCliente VIP: "+clienteVIP+".";
-	}
-
 
 }
