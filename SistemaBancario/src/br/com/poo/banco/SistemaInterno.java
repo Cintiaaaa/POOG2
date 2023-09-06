@@ -21,27 +21,26 @@ public class SistemaInterno {
 		
 		c1.informa();
 		
-		// Teste mudança de cargo
 		Date data = new Date();
 		DateFormat dataNasc = DateFormat.getDateInstance(DateFormat.MEDIUM);
-		System.out.println(dataNasc.format(data));
 		
+		// Teste mudança de cargo
 		Diretor diretor = new Diretor("Maria", "9665", "maria@mail.com", data, "diretor(a)");
 		
 		Presidente presidente = new Presidente("Pedro", "9874", "mail@mail.com", data, "presidente");
 		
-		System.out.println(presidente.getNome());
+		System.out.println("Nome do presidente: " + presidente.getNome());
 		
 		presidente.mudaCargo(diretor, "vice-presidente");
 		
-		System.out.println(diretor.getCargo());
+		System.out.println("Novo cargo da diretora: " + diretor.getCargo());
 		
 		// Teste saldo ContaPoupanca
 		ContaPoupanca poupanca = new ContaPoupanca("00015-4","0003","Julia", 300);
 		// gera o rendimento
 		poupanca.gerarRend();
 		
-		System.out.println(poupanca.getSaldo());
+		System.out.println("Saldo da poupança após o rendimento: " + poupanca.getSaldo());
 		
 	}
 
