@@ -13,7 +13,6 @@ public class Presidente extends Funcionario{
 	}
 	public Presidente(String nome, String cpf, String email, Date dataNasc, String cargo) {
 		super(nome, cpf, email, dataNasc, cargo);
-		this.funcionario = funcionario;
 	}
 	
 	// gets
