@@ -44,13 +44,17 @@ public class Conta {
 			return titular;
 		}
 		
+
 		public double getSaldo() {
 			return saldo;
 		}
-		
+
+		public void setSaldo(double saldo) {
+			this.saldo = saldo;
+		}
+
 		// informações da conta
 		
-
 		public static Logger getLogger() {
 			return logger;
 		}
@@ -72,4 +76,3 @@ public class Conta {
 
 		
 }
-

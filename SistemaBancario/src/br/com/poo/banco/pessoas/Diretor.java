@@ -12,4 +12,8 @@ public class Diretor extends Funcionario {
 	public Diretor(String nome, String cpf, String email, Date dataNasc, String cargo) {
 		super(nome, cpf, email, dataNasc, cargo);
 	}
+	
+//	public String getCargo() {
+//		return cargo;
+//	}
 }
