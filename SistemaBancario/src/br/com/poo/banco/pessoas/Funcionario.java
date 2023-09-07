@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Funcionario  {
 
-	private String nome;
+	protected String nome;
 	private String cpf;
 	private String email;
 	private Date dataNasc;
@@ -22,4 +22,11 @@ public class Funcionario  {
 		this.cargo = cargo;
 	}
 	
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
 }
