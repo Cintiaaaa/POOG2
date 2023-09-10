@@ -1,26 +1,28 @@
 package br.com.poo.banco.contas;
 
+import br.com.poo.banco.pessoas.Cliente;
+
 //definindo atributos da classe.
 
 public class ContaCorrente extends Conta {
-	
+
 	private double chequeEspecial;
 	private boolean clienteVIP;
-	
+
 	// construtores
-	
+
 	public ContaCorrente() {
 		super();
-    }
+	}
 
-	public ContaCorrente(String contaId, String agencia, String titular, double saldo, double chequeEspecial) {
-		super(contaId, agencia, titular, saldo);
-		this.chequeEspecial = chequeEspecial;	
+	public ContaCorrente(String contaId, String agencia, String cpf, String senha, double chequeEspecial) {
+		super(contaId, agencia, cpf, senha);
+		this.chequeEspecial = chequeEspecial;
 
 	}
-		
+
 	// método de saque
-	
+
 //	public boolean sacar(double valor)
 //	{
 //		if(this.saldo < valor)
@@ -38,23 +40,20 @@ public class ContaCorrente extends Conta {
 //			return true;
 //		}
 //	}
-	
+
 	// método de cobrança de taxa
-	
+
 //	public void gerarTaxa()
 //	{
 //		this.saldo-=13.90;
 //	}
-	
-	
-	//gets e sets
-	
+ 
+	// gets e sets
 
 	public void setChequeEspecial(double chequeEspecial) {
 		this.chequeEspecial = chequeEspecial;
 	}
-	
+
 	// informações da conta
-	
 
 }

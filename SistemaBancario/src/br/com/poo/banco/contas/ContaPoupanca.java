@@ -1,4 +1,5 @@
 package br.com.poo.banco.contas;
+import br.com.poo.banco.pessoas.Cliente;
 
 //definindo atributos da classe.
 
@@ -11,8 +12,8 @@ public class ContaPoupanca extends Conta {
 		super();
 	}
 
-	public ContaPoupanca(String contaId, String agencia, String titular, double saldo) {
-		super(contaId, agencia, titular, saldo);
+	public ContaPoupanca(String contaId, String agencia, String cpf, String senha) {
+		super(contaId, agencia, cpf, senha);
 		this.rendimento = 0.006;
 	}
 	

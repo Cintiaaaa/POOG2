@@ -5,7 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import br.com.poo.banco.contas.Conta;
+import br.com.poo.banco.pessoas.Cliente;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -16,13 +22,14 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 
 public class JLogin extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JPasswordField passwordField;
+	private JTextField inputCpf;
+	private JPasswordField inputPassword;
 
 	/**
 	 * Launch the application.
@@ -32,6 +39,7 @@ public class JLogin extends JFrame {
 			public void run() {
 				try {
 					JLogin frame = new JLogin();
+
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,6 +52,10 @@ public class JLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public JLogin() {
+		Date data = new Date();
+		Cliente cliente1 = new Cliente("Maria", "12345678910", "maria@mail.com", data);
+		Conta contaCliente1 = new Conta("990", "5454-3", "12345678910", "123");
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 803, 612);
 		contentPane = new JPanel();
@@ -52,12 +64,12 @@ public class JLogin extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton btnSair = new JButton("Sair");
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnSair.setBounds(216, 458, 95, 29);
 		contentPane.add(btnSair);
-		
+
 		JLabel lblNewLabel = new JLabel("Login");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(322, 92, 100, 35);
@@ -65,50 +77,61 @@ public class JLogin extends JFrame {
 		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 28));
 		contentPane.add(lblNewLabel);
-		
+
 		JButton btnNewButton = new JButton("Entrar");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// logica do Login
+				String cpf = inputCpf.getText();
+				String senha = new String(inputPassword.getPassword());
+				if (contaCliente1.getCpf().equals(cpf) && contaCliente1.getSenha().equals(senha)) {
+					System.out.println("Acesso Permitido!");
+					JOptionPane.showMessageDialog(btnNewButton, "Acesso Permitido!");
+				} else {
+					System.out.println("Acesso Negado!" + " " + contaCliente1.getCpf() + " " + contaCliente1.getSenha() + " " + cpf + " " + senha);
+					JOptionPane.showMessageDialog(btnNewButton, "Acesso Negado!", "AVISO!", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		btnNewButton.setBounds(444, 458, 95, 29);
 		contentPane.add(btnNewButton);
-		
-		textField = new JTextField();
-		textField.setBounds(198, 265, 368, 35);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(198, 358, 368, 35);
-		contentPane.add(passwordField);
-		
+
+		inputCpf = new JTextField();
+		inputCpf.setBounds(198, 265, 368, 35);
+		contentPane.add(inputCpf);
+		inputCpf.setColumns(10);
+
+		inputPassword = new JPasswordField();
+		inputPassword.setBounds(198, 358, 368, 35);
+		contentPane.add(inputPassword);
+
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Selecione um tipo:", "Cliente", "Gerente", "Diretor", "Presidente"}));
+		comboBox.setModel(new DefaultComboBoxModel(
+				new String[] { "Selecione um tipo:", "Cliente", "Gerente", "Diretor", "Presidente" }));
 		comboBox.setToolTipText("");
 		comboBox.setBounds(198, 173, 368, 35);
 		contentPane.add(comboBox);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Usuário");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_1.setBounds(198, 157, 46, 14);
 		contentPane.add(lblNewLabel_1);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("CPF");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(198, 253, 46, 14);
 		contentPane.add(lblNewLabel_2);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("Senha");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_3.setBounds(198, 344, 46, 14);
 		contentPane.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\FACC\\Downloads\\WhatsApp Image 2023-09-10 at 15.27.10.jpeg"));
-		lblNewLabel_4.setBounds(0, 0, 789, 575);
-		contentPane.add(lblNewLabel_4);
+
+		JLabel enterButton = new JLabel("");
+		enterButton.setIcon(new ImageIcon("C:\\Users\\FACC\\Downloads\\WhatsApp Image 2023-09-10 at 15.27.10.jpeg"));
+		enterButton.setBounds(0, 0, 789, 575);
+		contentPane.add(enterButton);
 	}
 }
