@@ -9,8 +9,8 @@ public class Diretor extends Funcionario {
 		super();
 	}
 
-	public Diretor(String nome, String cpf, String email, Date dataNasc, String cargo) {
-		super(nome, cpf, email, dataNasc, cargo);
+	public Diretor(String nome, String cpf, String email, Date dataNasc, String cargo, double salario, String senha) {
+		super(nome, cpf, email, dataNasc, cargo, salario, senha);
 	}
 	
 //	public String getCargo() {

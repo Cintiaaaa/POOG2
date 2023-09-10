@@ -25,9 +25,9 @@ public class SistemaInterno {
 		DateFormat dataNasc = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		
 		// Teste mudança de cargo
-		Diretor diretor = new Diretor("Maria", "9665", "maria@mail.com", data, "diretor(a)");
+		Diretor diretor = new Diretor("Maria", "9665", "maria@mail.com", data, "diretor(a)", 20000.00, "123");
 		
-		Presidente presidente = new Presidente("Pedro", "9874", "mail@mail.com", data, "presidente");
+		Presidente presidente = new Presidente("Pedro", "9874", "mail@mail.com", data, "presidente", 50000.00, "123");
 		
 		System.out.println("Nome do presidente: " + presidente.getNome());
 		
