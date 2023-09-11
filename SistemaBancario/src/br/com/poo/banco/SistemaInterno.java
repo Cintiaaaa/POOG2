@@ -48,7 +48,7 @@ public class SistemaInterno {
 
 		//////////////
 		Cliente cliente1 = new Cliente("Maria", "12345678910", "maria@mail.com", data);
-		Conta contaCliente1 = new Conta("990", "5454-3", "12345678910", "123");
+		Conta contaCliente1 = new Conta("990", "5454-3", "12345678910", "123", 0.00);
 
 		System.out.println(contaCliente1);
 		// System.out.println(contaCliente1.getTitular().getNome());

@@ -15,39 +15,24 @@ public class ContaCorrente extends Conta {
 		super();
 	}
 
-	public ContaCorrente(String contaId, String agencia, String cpf, String senha, double chequeEspecial) {
-		super(contaId, agencia, cpf, senha);
+	public ContaCorrente(String contaId, String agencia, String cpf, String senha, double chequeEspecial,
+			double saldo) {
+		super(contaId, agencia, cpf, senha, saldo);
 		this.chequeEspecial = chequeEspecial;
+
+		Conta cc = new Conta();
+		cc.getSaldo();
 
 	}
 
-	// método de saque
-
-//	public boolean sacar(double valor)
-//	{
-//		if(this.saldo < valor)
-//		{
-//			return false;
-//		}
-//		else if(valor <= 0.0)
-//		{
-//			System.out.println("Valor inválido!");
-//			return false;
-//		}
-//		else
-//		{
-//			this.saldo-=valor;
-//			return true;
-//		}
-//	}
-
 	// método de cobrança de taxa
 
-//	public void gerarTaxa()
-//	{
-//		this.saldo-=13.90;
-//	}
- 
+	public void gerarTaxa() {
+		double novoSaldo = this.getSaldo() - 13.90;
+		this.setSaldo(novoSaldo);
+
+	}
+
 	// gets e sets
 
 	public void setChequeEspecial(double chequeEspecial) {

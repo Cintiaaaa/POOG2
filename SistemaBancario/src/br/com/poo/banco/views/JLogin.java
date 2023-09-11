@@ -55,7 +55,7 @@ public class JLogin extends JFrame {
 		setTitle("STBank");
 		Date data = new Date();
 		Cliente cliente1 = new Cliente("Maria", "12345678910", "maria@mail.com", data);
-		Conta contaCliente1 = new Conta("990", "5454-3", "12345678910", "123");
+		Conta contaCliente1 = new Conta("990", "5454-3", "12345678910", "123",20000.00);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 803, 612);
