@@ -130,7 +130,7 @@ public class JLogin extends JFrame {
 		contentPane.add(lblNewLabel_3);
 
 		JLabel enterButton = new JLabel("");
-		enterButton.setIcon(new ImageIcon("C:\\Users\\FACC\\Downloads\\WhatsApp Image 2023-09-10 at 15.27.10.jpeg"));
+		enterButton.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		enterButton.setBounds(0, 0, 789, 575);
 		contentPane.add(enterButton);
 	}
