@@ -83,7 +83,7 @@ public class Conta {
 
 	public String informa() {
 		logger.log(Level.INFO, "Número da conta: {0}.\nAgência: {1}.\nTitular: {2}.",
-				new Object[] { contaId, agencia, titular });
+				new Object[] { contaId, agencia});
 		return contaId;
 	}
 
