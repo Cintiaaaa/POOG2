@@ -52,6 +52,7 @@ public class JLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public JLogin() {
+		setTitle("STBank");
 		Date data = new Date();
 		Cliente cliente1 = new Cliente("Maria", "12345678910", "maria@mail.com", data);
 		Conta contaCliente1 = new Conta("990", "5454-3", "12345678910", "123");
@@ -111,12 +112,12 @@ public class JLogin extends JFrame {
 		comboBox.setModel(new DefaultComboBoxModel(
 				new String[] { "Selecione um tipo:", "Cliente", "Gerente", "Diretor", "Presidente" }));
 		comboBox.setToolTipText("");
-		comboBox.setBounds(198, 173, 368, 35);
+		comboBox.setBounds(198, 191, 355, 29);
 		contentPane.add(comboBox);
 
 		JLabel lblNewLabel_1 = new JLabel("Usuário");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_1.setBounds(198, 157, 46, 14);
+		lblNewLabel_1.setBounds(198, 176, 46, 14);
 		contentPane.add(lblNewLabel_1);
 
 		JLabel lblNewLabel_2 = new JLabel("CPF");
@@ -130,8 +131,8 @@ public class JLogin extends JFrame {
 		contentPane.add(lblNewLabel_3);
 
 		JLabel enterButton = new JLabel("");
-		enterButton.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
-		enterButton.setBounds(0, 0, 789, 575);
+		enterButton.setIcon(new ImageIcon("C:\\dev\\POO\\Workspace\\POOG2\\SistemaBancario\\imagens\\imagemFundo.jpeg"));
+		enterButton.setBounds(0, 0, 787, 573);
 		contentPane.add(enterButton);
 	}
 }
