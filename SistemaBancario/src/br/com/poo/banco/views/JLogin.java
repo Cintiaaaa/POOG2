@@ -65,6 +65,11 @@ public class JLogin extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel_4 = new JLabel("Logo");
+		lblNewLabel_4.setIcon(new ImageIcon("./imagens/logo.png"));
+		lblNewLabel_4.setBounds(682, 483, 75, 63);
+		contentPane.add(lblNewLabel_4);
 
 		JButton btnSair = new JButton("Sair");
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -73,10 +78,10 @@ public class JLogin extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("Login");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(322, 92, 100, 35);
+		lblNewLabel.setBounds(322, 73, 118, 54);
 		lblNewLabel.setForeground(new Color(0, 0, 128));
 		lblNewLabel.setBackground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 28));
+		lblNewLabel.setFont(new Font("Bauhaus 93", Font.BOLD, 36));
 		contentPane.add(lblNewLabel);
 
 		JButton btnNewButton = new JButton("Entrar");
@@ -99,7 +104,7 @@ public class JLogin extends JFrame {
 		contentPane.add(btnNewButton);
 
 		inputCpf = new JTextField();
-		inputCpf.setBounds(198, 265, 368, 35);
+		inputCpf.setBounds(198, 275, 368, 35);
 		contentPane.add(inputCpf);
 		inputCpf.setColumns(10);
 
@@ -112,7 +117,7 @@ public class JLogin extends JFrame {
 		comboBox.setModel(new DefaultComboBoxModel(
 				new String[] { "Selecione um tipo:", "Cliente", "Gerente", "Diretor", "Presidente" }));
 		comboBox.setToolTipText("");
-		comboBox.setBounds(198, 191, 355, 29);
+		comboBox.setBounds(198, 191, 368, 35);
 		contentPane.add(comboBox);
 
 		JLabel lblNewLabel_1 = new JLabel("Usuário");
@@ -122,7 +127,7 @@ public class JLogin extends JFrame {
 
 		JLabel lblNewLabel_2 = new JLabel("CPF");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(198, 253, 46, 14);
+		lblNewLabel_2.setBounds(198, 263, 46, 14);
 		contentPane.add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("Senha");
@@ -131,7 +136,7 @@ public class JLogin extends JFrame {
 		contentPane.add(lblNewLabel_3);
 
 		JLabel enterButton = new JLabel("");
-		enterButton.setIcon(new ImageIcon("C:\\dev\\POO\\Workspace\\POOG2\\SistemaBancario\\imagens\\imagemFundo.jpeg"));
+		enterButton.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		enterButton.setBounds(0, 0, 787, 573);
 		contentPane.add(enterButton);
 	}
