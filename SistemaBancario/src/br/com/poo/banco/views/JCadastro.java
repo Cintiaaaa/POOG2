@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
+import javax.swing.JButton;
 
 public class JCadastro extends JFrame {
 
@@ -54,57 +55,57 @@ public class JCadastro extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JButton textVoltar = new JButton("Voltar");
+		textVoltar.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textVoltar.setBounds(378, 328, 89, 23);
+		contentPane.add(textVoltar);
+		
+		JButton cadCadastrar = new JButton("Cadastrar");
+		cadCadastrar.setFont(new Font("Tahoma", Font.BOLD, 11));
+		cadCadastrar.setBounds(239, 328, 89, 23);
+		contentPane.add(cadCadastrar);
+		
 		JLabel newCadastro = new JLabel("Cadastro");
-		newCadastro.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		newCadastro.setFont(new Font("Tahoma", Font.BOLD, 28));
 		newCadastro.setForeground(new Color(0, 0, 128));
-		newCadastro.setBounds(10, 11, 139, 44);
+		newCadastro.setBounds(317, 11, 139, 44);
 		contentPane.add(newCadastro);
 		
 		JLabel lblNewLabel = new JLabel("Nome:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel.setBounds(10, 89, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		cadNome = new JTextField();
-		cadNome.setBounds(54, 88, 484, 20);
+		cadNome.setBounds(65, 88, 484, 20);
 		contentPane.add(cadNome);
 		cadNome.setColumns(10);
 		
 		JLabel textCpf = new JLabel("CPF:");
-		textCpf.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textCpf.setFont(new Font("Tahoma", Font.BOLD, 14));
 		textCpf.setBounds(10, 146, 46, 14);
 		contentPane.add(textCpf);
-		
-		cadCpf = new JTextField();
-		cadCpf.setColumns(10);
-		cadCpf.setBounds(54, 145, 241, 20);
-		contentPane.add(cadCpf);
 		try {
-			MaskFormatter mascaraCpf = null;
-			mascaraCpf = new MaskFormatter ("###.###.###-##");
-			mascaraCpf.setPlaceholderCharacter('_');					
+			MaskFormatter mascaraCpf = new MaskFormatter("###.###.###-##");
+		    cadCpf = new JFormattedTextField(mascaraCpf);
+		    cadCpf.setColumns(10);
+		    cadCpf.setBounds(54, 145, 241, 20);
+		    contentPane.add(cadCpf);				
 		} catch (ParseException e) {
-			System.err.println(" Erro na formatação!" + e.getMessage());
-			System.exit(-1);
+			e.printStackTrace();
 			
 		}
 			
-		
 		JLabel textDataNasc = new JLabel("Data de Nascimento:");
 		textDataNasc.setVerticalAlignment(SwingConstants.TOP);
-		textDataNasc.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textDataNasc.setBounds(10, 265, 139, 14);
+		textDataNasc.setFont(new Font("Tahoma", Font.BOLD, 14));
+		textDataNasc.setBounds(10, 265, 156, 14);
 		contentPane.add(textDataNasc);
-		
-		cadDataNasc = new JTextField();
-		cadDataNasc.setColumns(10);
-		cadDataNasc.setBounds(145, 265, 200, 20);
-		contentPane.add(cadDataNasc);
 		try {
 			MaskFormatter mascaraData = new MaskFormatter("##/##/####");
 			cadDataNasc = new JFormattedTextField(mascaraData);
 		    cadDataNasc.setColumns(10);
-		    cadDataNasc.setBounds(145, 265, 200, 20);
+		    cadDataNasc.setBounds(159, 265, 139, 20);
 		    contentPane.add(cadDataNasc);
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -112,13 +113,18 @@ public class JCadastro extends JFrame {
 		
 		
 		JLabel textEmail = new JLabel("E-mail:");
-		textEmail.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textEmail.setBounds(10, 213, 46, 14);
+		textEmail.setFont(new Font("Tahoma", Font.BOLD, 14));
+		textEmail.setBounds(10, 213, 66, 14);
 		contentPane.add(textEmail);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(54, 212, 484, 20);
+		textField.setBounds(65, 212, 484, 20);
 		contentPane.add(textField);
+		
+		JLabel imagemFundo = new JLabel("");
+		imagemFundo.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
+		imagemFundo.setBounds(0, 0, 784, 561);
+		contentPane.add(imagemFundo);
 	}
 }
