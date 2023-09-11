@@ -13,7 +13,7 @@ public class ContaPoupanca extends Conta {
 	}
 
 	public ContaPoupanca(String contaId, String agencia, String cpf, String senha) {
-		super(contaId, agencia, cpf, senha);
+		super(contaId, agencia, cpf, senha,0.00);
 		this.rendimento = 0.006;
 	}
 	

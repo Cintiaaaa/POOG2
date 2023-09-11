@@ -8,9 +8,9 @@ public class Conta {
 
 	private String contaId;
 	private String agencia;
+	private String cpf;
 	private String senha;
 	private double saldo;
-	private String cpf;
 
 	private static Logger logger = Logger.getLogger(Conta.class.getName());
 
@@ -18,9 +18,9 @@ public class Conta {
 
 	public Conta() {
 
-	} 
+	}
 
-	public Conta(String contaId, String agencia, String cpf, String senha) {
+	public Conta(String contaId, String agencia, String cpf, String senha, double saldo) {
 		this.contaId = contaId;
 		this.agencia = agencia;
 		this.saldo = 0.00;
@@ -28,6 +28,7 @@ public class Conta {
 		this.senha = senha;
 	}
 
+	// método Login
 	public Boolean logIn(String cpf, String senha) {
 
 		if (this.cpf.equals(cpf) && this.senha.equals(senha)) {
@@ -38,17 +39,32 @@ public class Conta {
 			return false;
 		}
 	}
-	
+
+	// método de saque
+	public boolean sacar(double valor) {
+		if (this.saldo < valor) {
+			System.out.println("Saldo Insuficiente!");
+			return false;
+		} else if (valor <= 0.0) {
+			System.out.println("Valor inválido!");
+			return false;
+		} else {
+			this.saldo -= valor;
+			System.out.println("Saque de R$ " + valor + "realizado com sucesso.\n Saldo atual de R$ " + saldo);
+			return true;
+		}
+	}
+
 	// gets e sets
 
 	public String getSenha() {
 		return senha;
 	}
-	
+
 	public String getCpf() {
 		return cpf;
 	}
-	
+
 	public String getContaId() {
 		return contaId;
 	}
@@ -56,10 +72,6 @@ public class Conta {
 	public String getAgencia() {
 		return agencia;
 	}
-
-//	public Cliente getTitular() {
-//		return titular;
-//	}
 
 	public double getSaldo() {
 		return saldo;
@@ -83,7 +95,7 @@ public class Conta {
 
 	public String informa() {
 		logger.log(Level.INFO, "Número da conta: {0}.\nAgência: {1}.\nTitular: {2}.",
-				new Object[] { contaId, agencia});
+				new Object[] { contaId, agencia });
 		return contaId;
 	}
 
