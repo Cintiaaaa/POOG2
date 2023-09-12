@@ -6,7 +6,7 @@ import br.com.poo.banco.pessoas.Cliente;
 
 public class ContaCorrente extends Conta {
 
-	private double chequeEspecial;
+	private Double chequeEspecial;
 	private boolean clienteVIP;
 
 	// construtores
@@ -15,9 +15,8 @@ public class ContaCorrente extends Conta {
 		super();
 	}
 
-	public ContaCorrente(String contaId, String agencia, String cpf, String senha, double chequeEspecial,
-			double saldo) {
-		super(contaId, agencia, cpf, senha, saldo);
+	public ContaCorrente(String tipo, String contaId, String agencia, String cpf, String senha, Double saldo, Double chequeEspecial) {
+		super(tipo, contaId, agencia, cpf, senha, saldo);
 		this.chequeEspecial = chequeEspecial;
 
 		Conta cc = new Conta();
@@ -25,9 +24,9 @@ public class ContaCorrente extends Conta {
 
 	}
 
-	// método de cobrança de taxa
+	// método de cobrança de tarifa
 
-	public void gerarTaxa() {
+	public void gerarTarifa() {
 		double novoSaldo = this.getSaldo() - 13.90;
 		this.setSaldo(novoSaldo);
 
@@ -35,7 +34,7 @@ public class ContaCorrente extends Conta {
 
 	// gets e sets
 
-	public void setChequeEspecial(double chequeEspecial) {
+	public void setChequeEspecial(Double chequeEspecial) {
 		this.chequeEspecial = chequeEspecial;
 	}
 
