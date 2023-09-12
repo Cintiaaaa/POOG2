@@ -1,18 +1,24 @@
 package br.com.poo.banco.contas;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import br.com.poo.banco.pessoas.Cliente;
+import br.com.poo.banco.contas.Conta;
 
 public class Conta {
 
+	private String tipo;
 	private String contaId;
 	private String agencia;
 	private String cpf;
 	private String senha;
-	private double saldo;
+	private Double saldo;
 
 	private static Logger logger = Logger.getLogger(Conta.class.getName());
+	
+	//definição do mapa
+		public static Map<String, Conta> mapaContas = new HashMap<>();
 
 	// construtores
 
@@ -20,10 +26,11 @@ public class Conta {
 
 	}
 
-	public Conta(String contaId, String agencia, String cpf, String senha, double saldo) {
+	public Conta(String tipo, String contaId, String agencia, String cpf, String senha, Double saldo) {
+		this.tipo = tipo;
 		this.contaId = contaId;
 		this.agencia = agencia;
-		this.saldo = 0.00;
+		this.saldo = saldo;
 		this.cpf = cpf;
 		this.senha = senha;
 	}
@@ -73,11 +80,11 @@ public class Conta {
 		return agencia;
 	}
 
-	public double getSaldo() {
+	public Double getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(double saldo) {
+	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
 
@@ -87,6 +94,10 @@ public class Conta {
 		return logger;
 	}
 
+	public String getTipo() {
+		return tipo;
+	}
+
 	public String toString() {
 		return "Número da conta: " + contaId + ".\nAgência: " + agencia + ".";
 	}
@@ -94,8 +105,8 @@ public class Conta {
 	// logger para exibir infos no sistema interno
 
 	public String informa() {
-		logger.log(Level.INFO, "Número da conta: {0}.\nAgência: {1}.\nTitular: {2}.",
-				new Object[] { contaId, agencia });
+		logger.log(Level.INFO, "Número da conta: {0}.\nAgência: {1}.\nCPF: {2}.",
+				new Object[] {contaId, agencia, cpf});
 		return contaId;
 	}
 

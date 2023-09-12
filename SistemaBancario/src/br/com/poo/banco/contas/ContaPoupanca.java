@@ -5,23 +5,23 @@ import br.com.poo.banco.pessoas.Cliente;
 
 public class ContaPoupanca extends Conta {
 	
-	private double rendimento;
+	private Double rendimento;
 
 // construtores
 	public ContaPoupanca() {
 		super();
 	}
 
-	public ContaPoupanca(String contaId, String agencia, String cpf, String senha) {
-		super(contaId, agencia, cpf, senha,0.00);
+	public ContaPoupanca(String tipo, String contaId, String agencia, String cpf, String senha, Double saldo) {
+		super(tipo, contaId, agencia, cpf, senha, saldo);
 		this.rendimento = 0.006;
 	}
 	
-	public double getSaldoPoupanca() {
+	public Double getSaldoPoupanca() {
 		return getSaldo();
 	}
 	//get do rendimento
-	public double getRendimento() {
+	public Double getRendimento() {
 		return rendimento;
 	}
 		
