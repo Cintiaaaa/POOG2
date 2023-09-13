@@ -14,14 +14,11 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
 
 public class JContaCorrente extends JFrame {
 
 	private JPanel telaContaCorrente;
-	private JTextField textFieldAg;
-	private JTextField textField_1;
-	private JTextField textFieldSaldo;
-	private JTextField textFieldChequeEsp;
 
 	/**
 	 * Launch the application.
@@ -43,7 +40,7 @@ public class JContaCorrente extends JFrame {
 	 * Create the frame.
 	 */
 	public JContaCorrente() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\dev\\POO\\Workspace\\POOG2\\SistemaBancario\\imagens\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 631, 471);
@@ -53,66 +50,57 @@ public class JContaCorrente extends JFrame {
 		setContentPane(telaContaCorrente);
 		telaContaCorrente.setLayout(null);
 		
-		JLabel textChequeEsp = new JLabel("Cheque Especial");
-		textChequeEsp.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textChequeEsp.setBounds(21, 238, 140, 20);
-		telaContaCorrente.add(textChequeEsp);
-		
-		textFieldSaldo = new JTextField();
-		textFieldSaldo.setColumns(10);
-		textFieldSaldo.setBounds(21, 207, 105, 20);
-		telaContaCorrente.add(textFieldSaldo);
-		
-		JLabel textSaldo = new JLabel("Saldo");
-		textSaldo.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textSaldo.setBounds(21, 182, 52, 14);
-		telaContaCorrente.add(textSaldo);
-		
-		JLabel TextLogo = new JLabel("Logo");
-		TextLogo.setIcon(new ImageIcon("C:\\dev\\POO\\Workspace\\POOG2\\SistemaBancario\\imagens\\logo.png"));
-		TextLogo.setBounds(533, 360, 72, 61);
-		telaContaCorrente.add(TextLogo);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(71, 140, 105, 20);
-		telaContaCorrente.add(textField_1);
-		
-		textFieldAg = new JTextField();
-		textFieldAg.setBounds(160, 115, 105, 20);
-		telaContaCorrente.add(textFieldAg);
-		textFieldAg.setColumns(10);
-		
-		JLabel textAgencia = new JLabel("Agência");
-		textAgencia.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textAgencia.setBounds(21, 143, 74, 14);
-		telaContaCorrente.add(textAgencia);
-		
-		JLabel textNumeroCc = new JLabel("Número Conta Corrente");
-		textNumeroCc.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textNumeroCc.setBounds(21, 118, 140, 14);
-		telaContaCorrente.add(textNumeroCc);
-		
-		JLabel TextCC = new JLabel("Seja Bem-Vindo(a) :");
-		TextCC.setFont(new Font("Tahoma", Font.BOLD, 11));
-		TextCC.setBounds(21, 82, 115, 14);
-		telaContaCorrente.add(TextCC);
-		
 		JLabel textContaCorrente = new JLabel("Conta Corrente");
 		textContaCorrente.setForeground(new Color(0, 0, 128));
 		textContaCorrente.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
 		textContaCorrente.setBounds(189, 32, 276, 37);
 		telaContaCorrente.add(textContaCorrente);
 		
+		JLabel TextCC = new JLabel("Seja Bem-Vindo(a) :");
+		TextCC.setFont(new Font("Tahoma", Font.BOLD, 11));
+		TextCC.setBounds(32, 82, 141, 14);
+		telaContaCorrente.add(TextCC);
+		
+		JButton btnNewButton_1 = new JButton("Depósito");
+		btnNewButton_1.setBounds(230, 315, 111, 23);
+		telaContaCorrente.add(btnNewButton_1);
+		
+		JLabel textAgencia = new JLabel("Agência");
+		textAgencia.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textAgencia.setBounds(254, 122, 89, 14);
+		telaContaCorrente.add(textAgencia);
+		
+		JLabel lblNewLabel_1 = new JLabel("Limite");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_1.setBounds(33, 198, 46, 14);
+		telaContaCorrente.add(lblNewLabel_1);
+		
+		JButton btnNewButton_2 = new JButton("Transferência");
+		btnNewButton_2.setBounds(416, 315, 111, 23);
+		telaContaCorrente.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_2 = new JLabel("Saldo");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_2.setBounds(451, 122, 46, 14);
+		telaContaCorrente.add(lblNewLabel_2);
+		
+		JLabel textNumeroCc = new JLabel("Número Conta Corrente");
+		textNumeroCc.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textNumeroCc.setBounds(31, 117, 141, 25);
+		telaContaCorrente.add(textNumeroCc);
+		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		lblNewLabel.setBounds(0, 0, 615, 432);
 		telaContaCorrente.add(lblNewLabel);
 		
-		textFieldChequeEsp = new JTextField();
-		textFieldChequeEsp.setHorizontalAlignment(SwingConstants.TRAILING);
-		textFieldChequeEsp.setColumns(10);
-		textFieldChequeEsp.setBounds(21, 269, 105, 20);
-		telaContaCorrente.add(textFieldChequeEsp);
+		JButton btnNewButton = new JButton("Saque");
+		btnNewButton.setBounds(38, 313, 111, 23);
+		telaContaCorrente.add(btnNewButton);
+		
+		JLabel TextLogo = new JLabel("Logo");
+		TextLogo.setIcon(new ImageIcon("./imagens/logo.png"));
+		TextLogo.setBounds(533, 360, 72, 61);
+		telaContaCorrente.add(TextLogo);
 	}
 }
