@@ -50,6 +50,11 @@ public class JContaCorrente extends JFrame {
 		setContentPane(telaContaCorrente);
 		telaContaCorrente.setLayout(null);
 		
+		JLabel textChequeEspecial = new JLabel("Cheque Especial");
+		textChequeEspecial.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textChequeEspecial.setBounds(32, 223, 98, 14);
+		telaContaCorrente.add(textChequeEspecial);
+		
 		JLabel textContaCorrente = new JLabel("Conta Corrente");
 		textContaCorrente.setForeground(new Color(0, 0, 128));
 		textContaCorrente.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
@@ -90,6 +95,7 @@ public class JContaCorrente extends JFrame {
 		telaContaCorrente.add(textNumeroCc);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		lblNewLabel.setBounds(0, 0, 615, 432);
 		telaContaCorrente.add(lblNewLabel);
