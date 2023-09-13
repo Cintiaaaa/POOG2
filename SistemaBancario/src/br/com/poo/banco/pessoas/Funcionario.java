@@ -1,26 +1,28 @@
 package br.com.poo.banco.pessoas;
 
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Funcionario  {
+public abstract class Funcionario  {
 
 	protected String nome;
 	private String cpf;
 	private String email;
-	private Date dataNasc;
 	private String cargo;
-	private double salario;
+	private Double salario;
 	private String senha;
+	
+	//criando o mapafuncionario
+		public static Map<String, Funcionario> mapaFuncionario = new HashMap<>();
 	
 	//construtor
 	public Funcionario() {
 		
 	}
-	public Funcionario(String nome, String cpf, String email, Date dataNasc, String cargo, double salario, String senha) {
+	public Funcionario(String nome, String cpf, String email, String cargo, Double salario, String senha) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
-		this.dataNasc = dataNasc;
 		this.cargo = cargo;
 		this.salario = salario;
 		this.senha = senha;
@@ -29,10 +31,28 @@ public class Funcionario  {
 	public String getCargo() {
 		return cargo;
 	}
-
+	
+	public String getNome() {
+		return nome;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public Double getSalario() {
+		return salario;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	
+	
 	public void setCargo(String cargo) {
 		if (this.cargo == "presidente") {
 			this.cargo = cargo;			
 		}
+		
 	}
 }

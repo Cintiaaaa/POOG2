@@ -37,7 +37,7 @@ public class JContaPoupança extends JFrame {
 	 */
 	public JContaPoupança() {
 		setTitle("STBank");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens//logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 631, 471);
 		JContaPoupança = new JPanel();
