@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import br.com.poo.banco.contas.Conta;
 
-public class Conta {
+public abstract class Conta {
 
 	private String tipo;
 	private String contaId;

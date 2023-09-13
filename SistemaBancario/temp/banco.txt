@@ -10,18 +10,18 @@ Poupança: 0123456-1;0001;006.732.007-02,7243,20000.00;
 Poupança: 7695787-2;4146;005.632.102-03,9022,5000.00;
 Poupança: 7876807-3;0004;102.555.232-01,1220,300.00;
 
-Cliente: Maria; 125.992.187-33; maria@gmail.com; 07/12/1990;
-Cliente: Daniel; 142.983.362-11; daniel@gmail.com; 01/02/1960;
-Cliente: João; 002.742.017-12; joao@gmail.com; 02/05/1994;
-Cliente: Clara; 005.698.101-03; clara@gmail.com; 05/10/2000;
-Cliente: José; 102.555.232-01; jose@gmail.com; 14/04/2002;
+Cliente: Maria; 125.992.187-33; maria@gmail.com;
+Cliente: Daniel; 142.983.362-11; daniel@gmail.com;
+Cliente: João; 002.742.017-12; joao@gmail.com;
+Cliente: Clara; 005.698.101-03; clara@gmail.com;
+Cliente: José; 102.555.232-01; jose@gmail.com;
 
-Gerente:Marcelo; 149.254.365-21; marcelo@stbank.com; 05/02/1975; Gerente; 10000.00; 5432; 0001;
-Gerente:Aline; 158.261.487-01; aline@stbank.com; 01/12/1985; Gerente; 3211; 12000.00; 0004;
-Gerente:João; 001.322.592-12; joao@stbank.com; 13/05/1994; Gerente; 1243; 15000.00; 0004;
+Gerente:Marcelo; 149.254.365-21; marcelo@stbank.com; Gerente; 10000.00; 5432; 0001;
+Gerente:Aline; 158.261.487-01; aline@stbank.com; Gerente; 3211; 12000.00; 0004;
+Gerente:João; 001.322.592-12; joao@stbank.com; Gerente; 1243; 15000.00; 0004;
 
-Diretor: Diogo; 544.111.000-02; diogo@stbank.com; 03/02/1992; Diretor; 20000.00; 58794;
-Diretor: Marcela; 123.456.789-10; marcela@stbank.com; 13/06/1969; Diretor; 20000.00; 87592;
-Diretor: Joana; 321.654.987.11; joana@stbank.com; 23/07/1990; Diretor; 20000.00; 58794;
+Diretor: Diogo; 544.111.000-02; diogo@stbank.com; Diretor; 20000.00; 58794;
+Diretor: Marcela; 123.456.789-10; marcela@stbank.com; Diretor; 20000.00; 87592;
+Diretor: Joana; 321.654.987.11; joana@stbank.com; Diretor; 20000.00; 58794;
 
-Presidente: Luana; 789.654.321-22; luana@stbank.com; 07/12/1989; Presidente; 50000.00; 0054321;
+Presidente: Luana; 789.654.321-22; luana@stbank.com; Presidente; 50000.00; 0054321;

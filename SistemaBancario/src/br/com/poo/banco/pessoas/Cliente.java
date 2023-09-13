@@ -1,14 +1,18 @@
 package br.com.poo.banco.pessoas;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Cliente {
 
 	private String nome;
 	private String cpf;
 	private String email;
-	private Date dataNasc;
-	// private String senha;
+	private String senha;
+	
+	//criando o mapacliente
+	public static Map<String, Cliente> mapaClientes = new HashMap<>();
 
 	// construtores
 
@@ -16,12 +20,11 @@ public class Cliente {
 
 	}
 
-	public Cliente(String nome, String cpf, String email, Date dataNasc) {
+	public Cliente(String nome, String cpf, String email, String senha) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
-		this.dataNasc = dataNasc;
-		// this.senha = senha;
+		this.senha = senha;
 	}
 
 	public String getNome() {
@@ -36,8 +39,5 @@ public class Cliente {
 		return email;
 	}
 
-	public Date getDataNasc() {
-		return dataNasc;
-	}
 
 }

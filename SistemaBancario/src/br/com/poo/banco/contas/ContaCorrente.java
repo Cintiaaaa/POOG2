@@ -19,9 +19,6 @@ public class ContaCorrente extends Conta {
 		super(tipo, contaId, agencia, cpf, senha, saldo);
 		this.chequeEspecial = chequeEspecial;
 
-		Conta cc = new Conta();
-		cc.getSaldo();
-
 	}
 
 	// método de cobrança de tarifa

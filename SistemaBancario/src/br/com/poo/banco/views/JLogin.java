@@ -56,10 +56,13 @@ public class JLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public JLogin() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\dev\\POO\\Workspace\\POOG2\\SistemaBancario\\imagens\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		Date data = new Date();
-		Cliente cliente1 = new Cliente("Maria", "12345678910", "maria@mail.com", data);
+		
+		// como puxar o txt para iniciar contas na tela de login?
+		
+		Cliente cliente1 = new Cliente("Maria", "12345678910", "maria@mail.com", "123");
 		Conta contaCliente1 = new Conta("Corrente", "990", "5454-3", "12345678910", "123",20000.00);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,6 +95,7 @@ public class JLogin extends JFrame {
 		JButton btnNewButton = new JButton("Entrar");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnNewButton.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				// logica do Login
 				String cpf = formattedCpf.getText();
