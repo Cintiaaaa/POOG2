@@ -40,6 +40,7 @@ public class JSaque extends JFrame {
 	 * Create the frame.
 	 */
 	public JSaque() {
+		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 631, 471);
 		contentPane = new JPanel();
@@ -48,11 +49,18 @@ public class JSaque extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\FACC\\Pictures\\Camera Roll\\logo-tsbank3.png"));
+		lblNewLabel_4.setBounds(546, 376, 61, 48);
+		contentPane.add(lblNewLabel_4);
+		
 		JButton btnNewButton_1 = new JButton("Voltar");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnNewButton_1.setBounds(159, 303, 113, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Confirmar");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnNewButton.setBounds(355, 303, 113, 23);
 		contentPane.add(btnNewButton);
 		
