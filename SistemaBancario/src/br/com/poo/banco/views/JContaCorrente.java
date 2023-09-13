@@ -17,7 +17,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
 public class JContaCorrente extends JFrame {
-
+//Linkar as telas de: saque, depósito e transferência
 	private JPanel telaContaCorrente;
 
 	/**
