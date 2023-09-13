@@ -5,6 +5,9 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Scanner;
 
 import br.com.poo.banco.contas.Conta;
@@ -30,9 +33,8 @@ public class LeituraEscrita {
 				{
 					String[] dados = linha.split(";");
 					
-					//ContaPoupança: String tipo, String contaId, String agencia, String cpf, String senha, Double saldo
-					//ContaCorrente: String tipo, String contaId, String agencia, String cpf, String senha, Double saldo, Double chequeEspecial
-					if(dados[0].equalsIgnoreCase("POUPANCA"))
+										
+					if(dados[0].equalsIgnoreCase("POUPANCA")) //ContaPoupança: String tipo, String contaId, String agencia, String cpf, String senha, Double saldo
 					{
 						ContaPoupanca cp = new ContaPoupanca(dados[0], dados[1], dados[2], dados[3], dados[4], Double.parseDouble(dados[5]));
 						//na primeira coluna, fica o identificador único. Nesse caso, cpf.
@@ -40,28 +42,29 @@ public class LeituraEscrita {
 						System.out.println(cp);
 					}
 					
-					else if(dados[0].equalsIgnoreCase("CORRENTE")) 
-					{
+					else if(dados[0].equalsIgnoreCase("CORRENTE")) //ContaCorrente: String tipo, String contaId, String agencia, String cpf, String senha, Double saldo, Double chequeEspecial
+					{ 
 						ContaCorrente cc = new ContaCorrente(dados[0], dados[1], dados[2], dados[3], dados[4], Double.parseDouble(dados[5]),Double.parseDouble(dados[6]));
 						Conta.mapaContas.put(dados[3], cc);
 					}
 					
-					else if(dados[0].equalsIgnoreCase("CLIENTE")) 
+					else if(dados[0].equalsIgnoreCase("CLIENTE")) //Cliente(String nome, String cpf, String email, Date dataNasc)
+					{ 
+						
+						
+					}
+					
+					else if(dados[0].equalsIgnoreCase("GERENTE")) //Gerente(String nome, String cpf, String email, Date dataNasc, String cargo, double salario, String senha,String agencia)	
 					{
 						
 					}
 					
-					else if(dados[0].equalsIgnoreCase("GERENTE")) 
+					else if(dados[0].equalsIgnoreCase("DIRETOR")) //Diretor(String nome, String cpf, String email, Date dataNasc, String cargo, double salario, String senha)
 					{
 						
 					}
 					
-					else if(dados[0].equalsIgnoreCase("DIRETOR")) 
-					{
-						
-					}
-					
-					else if(dados[0].equalsIgnoreCase("PRESIDENTE")) 
+					else if(dados[0].equalsIgnoreCase("PRESIDENTE")) //Presidente(String nome, String cpf, String email, Date dataNasc, String cargo, double salario, String senha)
 					{
 						
 					}
@@ -92,6 +95,19 @@ public class LeituraEscrita {
 		
 		sc.close();
 		buffWriter.close();
+
+	}
+	// Método Comprovante de Saque
+	 
+	public static void comprovanteSaque(Conta conta, Double valor) throws IOException {
+		String path = conta.getTipo() + "_" + conta.getCpf();
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + path + EXTENSAO, true));
+
+		buffWrite.append("********* SAQUE *********\n");
+		buffWrite.append("CPF: " + conta.getCpf() + "\n");
+		buffWrite.append("Conta: " + conta.getContaId() + "\n");
+		buffWrite.append("Valor do Saque: " + valor + "\n");
+		buffWrite.append("******** FIM SAQUE ********\n");
 
 	}
 
