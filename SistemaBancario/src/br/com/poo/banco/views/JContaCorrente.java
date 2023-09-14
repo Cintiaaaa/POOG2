@@ -50,6 +50,16 @@ public class JContaCorrente extends JFrame {
 		setContentPane(telaContaCorrente);
 		telaContaCorrente.setLayout(null);
 		
+		JButton ButtonImpExt = new JButton("Imprimir Extrato");
+		ButtonImpExt.setFont(new Font("Tahoma", Font.BOLD, 11));
+		ButtonImpExt.setBounds(104, 263, 127, 23);
+		telaContaCorrente.add(ButtonImpExt);
+		
+		JButton btnNewButton = new JButton("Saque");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNewButton.setBounds(104, 297, 127, 23);
+		telaContaCorrente.add(btnNewButton);
+		
 		JLabel textChequeEspecial = new JLabel("Limite Cheque Especial:");
 		textChequeEspecial.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textChequeEspecial.setBounds(32, 198, 141, 14);
@@ -67,7 +77,8 @@ public class JContaCorrente extends JFrame {
 		telaContaCorrente.add(TextCC);
 		
 		JButton btnNewButton_1 = new JButton("Depósito");
-		btnNewButton_1.setBounds(230, 315, 111, 23);
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNewButton_1.setBounds(304, 263, 111, 23);
 		telaContaCorrente.add(btnNewButton_1);
 		
 		JLabel textAgencia = new JLabel("Agência:");
@@ -76,7 +87,8 @@ public class JContaCorrente extends JFrame {
 		telaContaCorrente.add(textAgencia);
 		
 		JButton btnNewButton_2 = new JButton("Transferência");
-		btnNewButton_2.setBounds(416, 315, 111, 23);
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNewButton_2.setBounds(304, 297, 111, 23);
 		telaContaCorrente.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_2 = new JLabel("Saldo:");
@@ -89,19 +101,15 @@ public class JContaCorrente extends JFrame {
 		textNumeroCc.setBounds(31, 117, 141, 25);
 		telaContaCorrente.add(textNumeroCc);
 		
+		JLabel TextLogo = new JLabel("Logo");
+		TextLogo.setIcon(new ImageIcon("./imagens/logo.png"));
+		TextLogo.setBounds(533, 360, 72, 61);
+		telaContaCorrente.add(TextLogo);
+		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		lblNewLabel.setBounds(0, 0, 615, 432);
 		telaContaCorrente.add(lblNewLabel);
-		
-		JButton btnNewButton = new JButton("Saque");
-		btnNewButton.setBounds(38, 313, 111, 23);
-		telaContaCorrente.add(btnNewButton);
-		
-		JLabel TextLogo = new JLabel("Logo");
-		TextLogo.setIcon(new ImageIcon("./imagens/logo.png"));
-		TextLogo.setBounds(533, 360, 72, 61);
-		telaContaCorrente.add(TextLogo);
 	}
 }

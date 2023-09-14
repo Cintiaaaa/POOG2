@@ -46,24 +46,35 @@ public class JContaPoupanca extends JFrame {
 		setContentPane(JContaPoupança);
 		JContaPoupança.setLayout(null);
 		
+		JLabel textContaPoupança = new JLabel("Conta Poupança");
+		textContaPoupança.setForeground(new Color(0, 0, 128));
+		textContaPoupança.setFont(new Font("Bauhaus 93", Font.BOLD, 31));
+		textContaPoupança.setBounds(181, 11, 255, 46);
+		JContaPoupança.add(textContaPoupança);
+		
 		JLabel Logo = new JLabel("");
 		Logo.setIcon(new ImageIcon("./imagens//logo.png"));
 		Logo.setBounds(527, 375, 78, 46);
 		JContaPoupança.add(Logo);
 		
+		JButton buttonExtrato = new JButton("Imprimir Extrato");
+		buttonExtrato.setFont(new Font("Tahoma", Font.BOLD, 11));
+		buttonExtrato.setBounds(121, 225, 154, 23);
+		JContaPoupança.add(buttonExtrato);
+		
 		JButton ButtonRendimentos = new JButton("Rendimentos");
 		ButtonRendimentos.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ButtonRendimentos.setBounds(22, 187, 121, 23);
+		ButtonRendimentos.setBounds(358, 261, 121, 23);
 		JContaPoupança.add(ButtonRendimentos);
 		
 		JButton ButtonDepósito = new JButton("Depósito");
 		ButtonDepósito.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ButtonDepósito.setBounds(20, 255, 121, 23);
+		ButtonDepósito.setBounds(358, 225, 121, 23);
 		JContaPoupança.add(ButtonDepósito);
 		
 		JButton ButtonSaque = new JButton("Saque");
 		ButtonSaque.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ButtonSaque.setBounds(20, 221, 121, 23);
+		ButtonSaque.setBounds(121, 261, 154, 23);
 		JContaPoupança.add(ButtonSaque);
 		
 		JLabel textSaldoCp = new JLabel("Saldo");
@@ -86,15 +97,9 @@ public class JContaPoupanca extends JFrame {
 		textContaPoupanca.setBounds(10, 70, 116, 14);
 		JContaPoupança.add(textContaPoupanca);
 		
-		JLabel textContaPoupança = new JLabel("Conta Poupança");
-		textContaPoupança.setForeground(new Color(0, 0, 128));
-		textContaPoupança.setFont(new Font("Bauhaus 93", Font.BOLD, 31));
-		textContaPoupança.setBounds(181, 11, 255, 46);
-		JContaPoupança.add(textContaPoupança);
-		
-		JLabel JFundo = new JLabel("Fundo");
-		JFundo.setIcon(new ImageIcon("./imagens//imagemFundo.jpeg"));
-		JFundo.setBounds(0, 0, 615, 432);
-		JContaPoupança.add(JFundo);
+		JLabel Fundo = new JLabel("");
+		Fundo.setIcon(new ImageIcon("./imagens//imagemFundo.jpeg"));
+		Fundo.setBounds(0, 0, 615, 432);
+		JContaPoupança.add(Fundo);
 	}
 }
