@@ -88,14 +88,19 @@ public class JLogin extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.BOLD, 36));
 		contentPane.add(lblNewLabel);
 
-		JComboBox boxTipoConta = new JComboBox();
-		boxTipoConta.setEnabled(false);
-		boxTipoConta.setModel(new DefaultComboBoxModel(
-				new String[] { "Selecione um tipo de conta:", "Conta Corrente", "Conta Poupança" }));
-		boxTipoConta.setToolTipText("");
-		boxTipoConta.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		boxTipoConta.setBounds(120, 317, 368, 35);
-		contentPane.add(boxTipoConta);
+		JComboBox<String> boxTipoConta = new JComboBox<>();
+        List<ContaEnum> tipoConta = Arrays.asList(ContaEnum.values());
+        boxTipoConta.addItem("Selecione um tipo:");
+
+        for (ContaEnum ce : tipoConta)
+        {
+            boxTipoConta.addItem(ce.getTipoConta());
+        }
+
+        boxTipoConta.setToolTipText("");
+        boxTipoConta.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        boxTipoConta.setBounds(120, 317, 368, 35);
+        contentPane.add(boxTipoConta);
 
 		JComboBox<String> comboBox = new JComboBox<>();
 		List<PessoaEnum> tipoPessoa = Arrays.asList(PessoaEnum.values());

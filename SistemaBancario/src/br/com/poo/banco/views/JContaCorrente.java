@@ -50,9 +50,9 @@ public class JContaCorrente extends JFrame {
 		setContentPane(telaContaCorrente);
 		telaContaCorrente.setLayout(null);
 		
-		JLabel textChequeEspecial = new JLabel("Cheque Especial");
+		JLabel textChequeEspecial = new JLabel("Limite Cheque Especial:");
 		textChequeEspecial.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textChequeEspecial.setBounds(32, 223, 98, 14);
+		textChequeEspecial.setBounds(32, 198, 141, 14);
 		telaContaCorrente.add(textChequeEspecial);
 		
 		JLabel textContaCorrente = new JLabel("Conta Corrente");
@@ -70,21 +70,16 @@ public class JContaCorrente extends JFrame {
 		btnNewButton_1.setBounds(230, 315, 111, 23);
 		telaContaCorrente.add(btnNewButton_1);
 		
-		JLabel textAgencia = new JLabel("Agência");
+		JLabel textAgencia = new JLabel("Agência:");
 		textAgencia.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textAgencia.setBounds(254, 122, 89, 14);
 		telaContaCorrente.add(textAgencia);
-		
-		JLabel lblNewLabel_1 = new JLabel("Limite");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_1.setBounds(33, 198, 46, 14);
-		telaContaCorrente.add(lblNewLabel_1);
 		
 		JButton btnNewButton_2 = new JButton("Transferência");
 		btnNewButton_2.setBounds(416, 315, 111, 23);
 		telaContaCorrente.add(btnNewButton_2);
 		
-		JLabel lblNewLabel_2 = new JLabel("Saldo");
+		JLabel lblNewLabel_2 = new JLabel("Saldo:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(451, 122, 46, 14);
 		telaContaCorrente.add(lblNewLabel_2);

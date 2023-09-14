@@ -82,11 +82,11 @@ public class JTransferencia extends JFrame {
 		lblNewLabel_2.setBounds(28, 145, 146, 19);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_1 = new JLabel("transferêcia");
-		lblNewLabel_1.setForeground(new Color(0, 0, 128));
-		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 36));
-		lblNewLabel_1.setBounds(197, 48, 204, 39);
-		contentPane.add(lblNewLabel_1);
+		JLabel Transf = new JLabel("Transferência");
+		Transf.setForeground(new Color(0, 0, 128));
+		Transf.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
+		Transf.setBounds(197, 14, 204, 39);
+		contentPane.add(Transf);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
