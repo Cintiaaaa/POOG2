@@ -39,5 +39,11 @@ public class Cliente {
 		return email;
 	}
 
+	public String getSenha() {
+		return senha;
+	}
+	
+	
+
 
 }
