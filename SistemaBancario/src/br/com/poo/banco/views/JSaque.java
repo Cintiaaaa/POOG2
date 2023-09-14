@@ -14,6 +14,8 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 
 public class JSaque extends JFrame {
 //Mensagem de saldo na tela 
@@ -43,6 +45,7 @@ public class JSaque extends JFrame {
 	public JSaque() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 631, 471);
 		contentPane = new JPanel();
@@ -51,9 +54,14 @@ public class JSaque extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel_4 = new JLabel("");
+		JLabel lblNewLabel_2 = new JLabel("Seu saldo:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_2.setBounds(85, 169, 63, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_4 = new JLabel("Logo");
 		lblNewLabel_4.setIcon(new ImageIcon("./imagens/logo.png"));
-		lblNewLabel_4.setBounds(546, 376, 61, 48);
+		lblNewLabel_4.setBounds(538, 365, 69, 59);
 		contentPane.add(lblNewLabel_4);
 		
 		JButton btnNewButton_1 = new JButton("Voltar");
@@ -78,20 +86,15 @@ public class JSaque extends JFrame {
 		comboBox.setBounds(159, 102, 309, 31);
 		contentPane.add(comboBox);
 		
-		JLabel lblNewLabel_3 = new JLabel("Valor do saque");
+		JLabel lblNewLabel_3 = new JLabel("Valor do saque:");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(73, 228, 97, 14);
+		lblNewLabel_3.setBounds(60, 231, 97, 14);
 		contentPane.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_2 = new JLabel("Seu saldo ");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(73, 166, 63, 14);
-		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_1 = new JLabel("Saque");
 		lblNewLabel_1.setForeground(new Color(0, 0, 128));
 		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 31));
-		lblNewLabel_1.setBounds(263, 43, 128, 40);
+		lblNewLabel_1.setBounds(253, 43, 104, 40);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel = new JLabel("");
