@@ -7,7 +7,9 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -95,7 +97,15 @@ public class JLogin extends JFrame {
 		boxTipoConta.setBounds(120, 317, 368, 35);
 		contentPane.add(boxTipoConta);
 
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<>();
+		List<PessoaEnum> tipoPessoa = Arrays.asList(PessoaEnum.values());
+		comboBox.addItem("Selecione um tipo:");
+		
+		for(PessoaEnum pe : tipoPessoa)
+		{
+			comboBox.addItem(pe.getTipoPessoa());
+		}
+		
 		comboBox.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -108,8 +118,6 @@ public class JLogin extends JFrame {
 			}
 		});
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		comboBox.setModel(new DefaultComboBoxModel(
-				new String[] { "Selecione um tipo:", "Cliente", "Gerente", "Diretor", "Presidente" }));
 		comboBox.setToolTipText("");
 		comboBox.setBounds(120, 108, 368, 35);
 		contentPane.add(comboBox);
