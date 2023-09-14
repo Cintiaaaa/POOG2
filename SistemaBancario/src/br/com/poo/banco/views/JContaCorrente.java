@@ -89,7 +89,7 @@ public class JContaCorrente extends JFrame {
 		lblNewLabel_2.setBounds(451, 122, 46, 14);
 		telaContaCorrente.add(lblNewLabel_2);
 		
-		JLabel textNumeroCc = new JLabel("Número Conta Corrente");
+		JLabel textNumeroCc = new JLabel("Número Conta Corrente: ");
 		textNumeroCc.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textNumeroCc.setBounds(31, 117, 141, 25);
 		telaContaCorrente.add(textNumeroCc);

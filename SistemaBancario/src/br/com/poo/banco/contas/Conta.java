@@ -61,6 +61,13 @@ public abstract class Conta {
 			return true;
 		}
 	}
+	
+	// método verificador de saldo
+	
+	public double verificaSaldo()
+	{
+		return this.saldo;
+	}
 
 	// gets e sets
 
