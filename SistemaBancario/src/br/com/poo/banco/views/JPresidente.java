@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
 
 public class JPresidente extends JFrame {
 
@@ -43,6 +45,12 @@ public class JPresidente extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel textPresidente = new JLabel("Presidente");
+		textPresidente.setForeground(new Color(0, 0, 128));
+		textPresidente.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
+		textPresidente.setBounds(216, 11, 159, 41);
+		contentPane.add(textPresidente);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));

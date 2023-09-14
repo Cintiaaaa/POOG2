@@ -25,6 +25,31 @@ public class ContaPoupanca extends Conta {
 		return rendimento;
 	}
 	
+	// método saque sem tarifa
+
+    public boolean sacar(double valor) {
+        if (this.getSaldo() < valor) {
+            System.out.println("Saldo Insuficiente!");
+            return false;
+        } else if (valor <= 0.0) {
+            System.out.println("Valor inválido!");
+            return false;
+        } else {
+            double novoSaldo = this.getSaldo() - valor;
+            this.setSaldo(novoSaldo);
+            System.out.println("Saque de R$ " + valor + "realizado com sucesso.\n Saldo atual de R$ " + getSaldo());
+            return true;
+        }
+    }
+ // método depósito sem tarifa
+
+    public void depositar(double valor)
+    {
+        double novoSaldo = this.getSaldo() + valor;
+        this.setSaldo(novoSaldo);
+        System.out.println("Foi realizado um depósito de R$ "+valor+".");
+    }
+	
 	// método rendimento por dias
 	// rende 0,02% ao dia
 	

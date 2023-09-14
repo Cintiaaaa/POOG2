@@ -11,12 +11,12 @@ Poupança; 7695787-2;4146;005.632.102-03;9022;5000.00;
 Poupança; 7876807-3;0004;102.555.232-01;1220;300.00;
 
 Cliente; Maria do Carmo; 125.992.187-33; maria@gmail.com;
-Cliente;Daniel Oliveira; 142.983.362-11; daniel@gmail.com;
+Cliente; Daniel Oliveira; 142.983.362-11; daniel@gmail.com;
 Cliente; João Damasceno; 002.742.017-12; joao@gmail.com;
 Cliente; Clara Camargo; 005.698.101-03; clara@gmail.com;
 Cliente; José Medeiros; 102.555.232-01; jose@gmail.com;
 
-Gerente;Marcelo Domingues; 149.254.365-21; marcelo@stbank.com; Gerente; 10000.00; 5432; 0001;
+Gerente;Marcelo Domingues; 149.254.365-21; marcelo@stbank.com; Gerente; 5432; 10000.00; 0001;
 Gerente;Aline Macedo; 158.261.487-01; aline@stbank.com; Gerente; 3211; 12000.00; 0004;
 Gerente;João Carvalho; 001.322.592-12; joao@stbank.com; Gerente; 1243; 15000.00; 0004;
 

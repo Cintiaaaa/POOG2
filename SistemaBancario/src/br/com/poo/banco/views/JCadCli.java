@@ -24,7 +24,6 @@ public class JCadCli extends JFrame {
 	private JPanel contentPane;
 	private JTextField cadNome;
 	private JTextField cadCpf;
-	private JTextField cadDataNasc;
 	private JTextField textField;
 	private JPasswordField passwordField;
 	private JPasswordField passwordField_1;
@@ -105,18 +104,8 @@ public class JCadCli extends JFrame {
 			e.printStackTrace();
 			
 		}
-			
-		JLabel textDataNasc = new JLabel("Data de Nascimento:");
-		textDataNasc.setVerticalAlignment(SwingConstants.TOP);
-		textDataNasc.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textDataNasc.setBounds(10, 207, 156, 14);
-		contentPane.add(textDataNasc);
 		try {
 			MaskFormatter mascaraData = new MaskFormatter("##/##/####");
-			cadDataNasc = new JFormattedTextField(mascaraData);
-		    cadDataNasc.setColumns(10);
-		    cadDataNasc.setBounds(130, 203, 100, 23);
-		    contentPane.add(cadDataNasc);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -134,16 +123,16 @@ public class JCadCli extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("Senha:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(10, 242, 66, 23);
+		lblNewLabel_2.setBounds(10, 217, 66, 23);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Confirme sua senha:");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(265, 237, 175, 32);
+		lblNewLabel_3.setBounds(265, 212, 175, 32);
 		contentPane.add(lblNewLabel_3);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(65, 239, 150, 23);
+		passwordField.setBounds(65, 214, 150, 23);
 		contentPane.add(passwordField);
 		
 		JLabel imagemFundo = new JLabel("");
@@ -152,7 +141,7 @@ public class JCadCli extends JFrame {
 		contentPane.add(imagemFundo);
 		
 		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(389, 240, 150, 23);
+		passwordField_1.setBounds(389, 215, 150, 23);
 		contentPane.add(passwordField_1);
 	}
 }
