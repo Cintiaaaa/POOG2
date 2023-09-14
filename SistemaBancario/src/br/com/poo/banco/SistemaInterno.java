@@ -19,7 +19,7 @@ public class SistemaInterno {
 		jLogin.setVisible(true);
 		
 		DecimalFormat df = new DecimalFormat("#,###.00");
-
+		LeituraEscrita.comprovanteSaque(c1, 50.00);
 	}
 
 }

@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import br.com.poo.Enums.ContaEnum;
@@ -109,13 +111,21 @@ public class LeituraEscrita {
 	public static void comprovanteSaque(Conta conta, Double valor) throws IOException {
 		String path = conta.getTipo() + "_" + conta.getCpf();
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + path + EXTENSAO, true));
+		
+		//biblioteca para data e hora
+				LocalDateTime dataHora = LocalDateTime.now();
+				//formatação do padrão da data
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-		buffWrite.append("********* SAQUE *********\n");
-		buffWrite.append("CPF: " + conta.getCpf() + "\n");
-		buffWrite.append("Conta: " + conta.getContaId() + "\n");
-		buffWrite.append("Valor do Saque: " + valor + "\n");
-		buffWrite.append("******** FIM SAQUE ********\n");
 
+		buffWrite.append("-------------- SAQUE --------------\n");
+		buffWrite.append("CPF: "+conta.getCpf()+"\n");
+		buffWrite.append("Conta: "+conta.getContaId()+"\n");
+		buffWrite.append("Valor do saque: R$ "+valor+"\n");
+		buffWrite.append("Operação realizada em "+dtf.format(dataHora)+"\n");
+		buffWrite.append("------------ FIM SAQUE ------------\n\n");
+		
+		buffWrite.close();
 	}
-
 }
+
