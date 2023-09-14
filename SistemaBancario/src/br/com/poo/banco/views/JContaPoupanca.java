@@ -12,7 +12,7 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
 
-public class JContaPoupança extends JFrame {
+public class JContaPoupanca extends JFrame {
 
 	private JPanel JContaPoupança;
 
@@ -23,7 +23,7 @@ public class JContaPoupança extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JContaPoupança frame = new JContaPoupança();
+					JContaPoupanca frame = new JContaPoupanca();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +35,7 @@ public class JContaPoupança extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JContaPoupança() {
+	public JContaPoupanca() {
 		setTitle("STBank");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

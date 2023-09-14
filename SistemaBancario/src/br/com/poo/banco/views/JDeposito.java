@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.Color;
 import javax.swing.JSpinner;
 import javax.swing.JComboBox;
@@ -42,6 +43,7 @@ public class JDeposito extends JFrame {
 	 * Create the frame.
 	 */
 	public JDeposito() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 633, 473);
@@ -80,6 +82,11 @@ public class JDeposito extends JFrame {
 		comboBox.setBounds(160, 115, 285, 30);
 		contentPane.add(comboBox);
 		
+		JLabel lblNewLabel_4 = new JLabel("Logo");
+		lblNewLabel_4.setIcon(new ImageIcon("./imagens/logo.png"));
+		lblNewLabel_4.setBounds(528, 357, 75, 63);
+		contentPane.add(lblNewLabel_4);
+		
 		JLabel lblNewLabel_1 = new JLabel("Depósito");
 		lblNewLabel_1.setForeground(new Color(0, 0, 128));
 		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 31));
@@ -87,7 +94,7 @@ public class JDeposito extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\FACC\\Downloads\\imagem de fundo.jpeg"));
+		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		lblNewLabel.setBounds(0, 0, 631, 447);
 		contentPane.add(lblNewLabel);
 	}

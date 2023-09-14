@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -40,6 +41,7 @@ public class JSaque extends JFrame {
 	 * Create the frame.
 	 */
 	public JSaque() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 631, 471);
@@ -50,7 +52,7 @@ public class JSaque extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\FACC\\Pictures\\Camera Roll\\logo-tsbank3.png"));
+		lblNewLabel_4.setIcon(new ImageIcon("./imagens/logo.png"));
 		lblNewLabel_4.setBounds(546, 376, 61, 48);
 		contentPane.add(lblNewLabel_4);
 		
@@ -93,7 +95,7 @@ public class JSaque extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\RamonECintia\\Downloads\\WhatsApp Image 2023-09-13 at 17.09.35.jpeg"));
+		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		lblNewLabel.setBounds(0, -20, 625, 452);
 		contentPane.add(lblNewLabel);
 	}
