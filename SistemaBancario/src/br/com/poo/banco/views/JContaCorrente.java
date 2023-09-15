@@ -24,7 +24,7 @@ public class JContaCorrente extends JFrame {
 	 * Launch the application.
 	 */
 	
-	public JContaCorrente(String nome) {
+	public JContaCorrente(String nome, String contaId, String agencia, Double saldo, Double chequeEspecial) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,9 +45,9 @@ public class JContaCorrente extends JFrame {
 		btnNewButton.setBounds(104, 297, 127, 23);
 		telaContaCorrente.add(btnNewButton);
 		
-		JLabel textChequeEspecial = new JLabel("Limite Cheque Especial:");
+		JLabel textChequeEspecial = new JLabel("Limite Cheque Especial: R$ " + chequeEspecial);
 		textChequeEspecial.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textChequeEspecial.setBounds(32, 198, 141, 14);
+		textChequeEspecial.setBounds(32, 206, 224, 14);
 		telaContaCorrente.add(textChequeEspecial);
 		
 		JLabel textContaCorrente = new JLabel("Conta Corrente");
@@ -58,7 +58,7 @@ public class JContaCorrente extends JFrame {
 		
 		JLabel TextCC = new JLabel("Seja Bem-Vindo(a) : " + nome);
 		TextCC.setFont(new Font("Tahoma", Font.BOLD, 11));
-		TextCC.setBounds(32, 82, 141, 14);
+		TextCC.setBounds(32, 82, 311, 14);
 		telaContaCorrente.add(TextCC);
 		
 		JButton btnNewButton_1 = new JButton("Deposito");
@@ -66,9 +66,9 @@ public class JContaCorrente extends JFrame {
 		btnNewButton_1.setBounds(304, 263, 111, 23);
 		telaContaCorrente.add(btnNewButton_1);
 		
-		JLabel textAgencia = new JLabel("Agencia:");
+		JLabel textAgencia = new JLabel("Agencia: " + agencia);
 		textAgencia.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textAgencia.setBounds(254, 122, 89, 14);
+		textAgencia.setBounds(376, 122, 141, 14);
 		telaContaCorrente.add(textAgencia);
 		
 		JButton btnNewButton_2 = new JButton("Transferencia");
@@ -76,14 +76,14 @@ public class JContaCorrente extends JFrame {
 		btnNewButton_2.setBounds(304, 297, 111, 23);
 		telaContaCorrente.add(btnNewButton_2);
 		
-		JLabel lblNewLabel_2 = new JLabel("Saldo:");
+		JLabel lblNewLabel_2 = new JLabel("Saldo: R$ " + saldo);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(451, 122, 46, 14);
+		lblNewLabel_2.setBounds(32, 165, 119, 14);
 		telaContaCorrente.add(lblNewLabel_2);
 		
-		JLabel textNumeroCc = new JLabel("Número Conta Corrente: ");
+		JLabel textNumeroCc = new JLabel("Número Conta Corrente: "+contaId);
 		textNumeroCc.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textNumeroCc.setBounds(31, 117, 141, 25);
+		textNumeroCc.setBounds(31, 117, 260, 25);
 		telaContaCorrente.add(textNumeroCc);
 		
 		JLabel TextLogo = new JLabel("Logo");
