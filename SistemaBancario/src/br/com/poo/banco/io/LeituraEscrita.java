@@ -24,8 +24,10 @@ public class LeituraEscrita {
 	
 	static final String PATH_BASICO = "./temp/";
 	static final String EXTENSAO = ".txt";
+	static int contador = 0;
 	
-	//criando mÃ©todo leitor do banco.txt
+	
+	//criando método leitor do banco.txt
 	public static void leitor(String path) throws IOException
 	{
 		
@@ -36,7 +38,9 @@ public class LeituraEscrita {
 			{
 				linha = buffRead.readLine();
 				if(linha != null)
+					
 				{
+					contador ++;
 					String[] dados = linha.split(";");
 					
 										
@@ -88,25 +92,41 @@ public class LeituraEscrita {
 			//System.out.println(Conta.mapaContas);
 	}
 	
-	//criando mÃ©todo escritor no banco.txt
-	public static void escritor(String path) throws IOException
-	{
-		String escreve;
-		Scanner sc = new Scanner(System.in);
-		
-		BufferedWriter buffWriter = new BufferedWriter(new FileWriter(PATH_BASICO+path+EXTENSAO, true));
-		
-		//o ",true" verifica se tem algo escrito e escreve depois
-		
-		System.out.println("Escreva algo: ");
-		escreve = sc.nextLine();
-		buffWriter.append(escreve+"\n");
-		
-		sc.close();
-		buffWriter.close();
+	//criando método escritor no banco.txt
+//	public static void escritor(String path) throws IOException
+//	{
+//		String escreve;
+//		Scanner sc = new Scanner(System.in);
+//		
+//		BufferedWriter buffWriter = new BufferedWriter(new FileWriter(PATH_BASICO+path+EXTENSAO, true));
+//		
+//		//o ",true" verifica se tem algo escrito e escreve depois
+//		
+//		System.out.println("Escreva algo: ");
+//		escreve = sc.nextLine();
+//		buffWriter.append(escreve+"\n");
+//		
+//		sc.close();
+//		buffWriter.close();
+//
+//	}
+	
+	public static void escritor(String path, String cliente, String conta) throws IOException {
 
-	}
-	// MÃ©todo Comprovante de Saque
+        try (BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO+path+EXTENSAO))) {
+            String dado = "";
+            for(int i = 0; i < contador+1; i++) {
+                dado = buffRead.readLine();
+                if(dado == null) {
+                    try (BufferedWriter buffWriter = new BufferedWriter(new FileWriter(PATH_BASICO+path+EXTENSAO,true))) {
+                        buffWriter.append(cliente);
+                        buffWriter.append(conta);
+                    }
+                }
+            }
+        } 
+    }
+	// Método Comprovante de Saque
 	 
 	public static void comprovanteSaque(Conta conta, Double valor) throws IOException {
 		String path = conta.getTipo() + "_" + conta.getCpf();

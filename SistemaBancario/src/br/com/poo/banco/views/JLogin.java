@@ -152,7 +152,7 @@ public class JLogin extends JFrame {
 							jConCor.setVisible(true);
 						} else {
 								dispose();
-								JContaPoupanca jConPou = new JContaPoupanca(c.getNome());
+								JContaPoupanca jConPou = new JContaPoupanca(c.getNome(),c1.getContaId(),c1.getAgencia(),c1.getSaldo());
 								jConPou.setLocationRelativeTo(jConPou);
 								jConPou.setVisible(true);
 							}
