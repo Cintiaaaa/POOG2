@@ -2,16 +2,19 @@ package br.com.poo.banco.views;
 
 import java.awt.EventQueue;
 import java.awt.Toolkit;
+import java.text.ParseException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -63,7 +66,7 @@ public class JGerente extends JFrame {
 		contentPane.add(lblNewLabelSenha);
 		
 		JLabel Logo = new JLabel("");
-		Logo.setIcon(new ImageIcon("C:\\dev\\POO\\Workspace\\POOG2\\SistemaBancario\\imagens\\logo.png"));
+		Logo.setIcon(new ImageIcon("imagens/logo.png"));
 		Logo.setBounds(541, 371, 64, 50);
 		contentPane.add(Logo);
 		
@@ -139,10 +142,18 @@ public class JGerente extends JFrame {
 		textFieldEmail.setBounds(53, 157, 251, 20);
 		contentPane.add(textFieldEmail);
 		
-		textFieldCpf = new JTextField();
+		
+		MaskFormatter mascaraCpf;
+		try {
+			mascaraCpf = new MaskFormatter ("###.###.###-##");
+		
+		textFieldCpf = new JFormattedTextField(mascaraCpf);
 		textFieldCpf.setColumns(10);
 		textFieldCpf.setBounds(53, 113, 251, 20);
 		contentPane.add(textFieldCpf);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		
 		textFieldNome = new JTextField();
 		textFieldNome.setBounds(53, 73, 251, 20);

@@ -40,39 +40,39 @@ public class LeituraEscrita {
 					String[] dados = linha.split(";");
 					
 										
-					if(dados[0].equalsIgnoreCase(ContaEnum.POUPANÇA.getTipoConta())) //ContaPoupanÃ§a: String tipo, String contaId, String agencia, String cpf, String senha, Double saldo
+					if(dados[0].equalsIgnoreCase(ContaEnum.POUPANÇA.getTipoConta())) 
 					{
 						ContaPoupanca cp = new ContaPoupanca(dados[0], dados[1], dados[2], dados[3], dados[4], Double.parseDouble(dados[5]));
-						//na primeira coluna, fica o identificador Ãºnico. Nesse caso, cpf.
+						//na primeira coluna, fica o identificador unico. Nesse caso, cpf.
 						Conta.mapaContas.put(dados[3], cp);
 						System.out.println(cp);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(ContaEnum.CORRENTE.getTipoConta())) //ContaCorrente: String tipo, String contaId, String agencia, String cpf, String senha, Double saldo, Double chequeEspecial
+					else if(dados[0].equalsIgnoreCase(ContaEnum.CORRENTE.getTipoConta())) 
 					{ 
 						ContaCorrente cc = new ContaCorrente(dados[0], dados[1], dados[2], dados[3], dados[4], Double.parseDouble(dados[5]),Double.parseDouble(dados[6]));
 						Conta.mapaContas.put(dados[3], cc);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) //Cliente(String tipo, String nome, String cpf, String email)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) 
 					{ 
 						Cliente c = new Cliente(dados[0], dados[1], dados[2], dados[3]);
 						Cliente.mapaClientes.put(dados[2], c);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.GERENTE.getTipoPessoa())) //Gerente(cargo, nome, cpf, email, salario, senha, agencia)	
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.GERENTE.getTipoPessoa())) 
 					{
 						Gerente g = new Gerente(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5], dados[6]);
 						Funcionario.mapaFuncionario.put(dados[2], g);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.DIRETOR.getTipoPessoa())) //Diretor(String cargo, String nome, String cpf, String email,  Double salario, String senha)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.DIRETOR.getTipoPessoa())) 
 					{
 						Diretor d = new Diretor (dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5]);
 						Funcionario.mapaFuncionario.put(dados[2], d);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.PRESIDENTE.getTipoPessoa())) //Presidente(String cargo, String nome, String cpf, String email,  Double salario, String senha)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.PRESIDENTE.getTipoPessoa())) 
 					{
 						Presidente p = new Presidente(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5]);
 						Funcionario.mapaFuncionario.put(dados[2], p);
