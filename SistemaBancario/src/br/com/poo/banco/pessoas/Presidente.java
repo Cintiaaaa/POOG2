@@ -5,22 +5,22 @@ import java.util.Date;
 import java.util.logging.Level;
 
 public class Presidente extends Funcionario{
-	
-	public Presidente() {
-		super();
 
-	}
-	public Presidente(String nome, String cpf, String email, String cargo, Double salario, String senha) {
-		super(nome, cpf, email, cargo, salario, senha);
-	}
-	
-	// gets
-	public String getNome() {
-		return nome;
-	}
+    public Presidente() {
+        super();
 
-	public Funcionario mudaCargo(Funcionario func, String novoCargo) {
-		func.setCargo(novoCargo);
-		return func;
-	}
+    }
+    public Presidente(String cargo,String nome, String cpf, String email,  Double salario, String senha) {
+        super(cargo, nome, cpf, email,  salario, senha);
+    }
+
+    // gets
+    public String getNome() {
+        return nome;
+    }
+
+    public Funcionario mudaCargo(Funcionario func, String novoCargo) {
+        func.setCargo(novoCargo);
+        return func;
+    }
 }

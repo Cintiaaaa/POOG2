@@ -18,6 +18,8 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class JCadCli extends JFrame {
 
@@ -58,88 +60,92 @@ public class JCadCli extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Logo");
 		lblNewLabel_1.setIcon(new ImageIcon("./imagens/logo.png"));
 		lblNewLabel_1.setBounds(530, 358, 75, 63);
 		contentPane.add(lblNewLabel_1);
-		
+
 		JButton textVoltar = new JButton("Voltar");
 		textVoltar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textVoltar.setBounds(270, 309, 110, 23);
 		contentPane.add(textVoltar);
-		
+
 		JButton cadCadastrar = new JButton("Cadastrar");
+		cadCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
 		cadCadastrar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		cadCadastrar.setBounds(131, 309, 110, 23);
 		contentPane.add(cadCadastrar);
-		
+
 		JLabel newCadastro = new JLabel("Cadastro - Cliente");
 		newCadastro.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
 		newCadastro.setForeground(new Color(0, 0, 128));
 		newCadastro.setBounds(164, 14, 332, 44);
 		contentPane.add(newCadastro);
-		
+
 		JLabel lblNewLabel = new JLabel("Nome:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel.setBounds(10, 73, 46, 14);
 		contentPane.add(lblNewLabel);
-		
+
 		cadNome = new JTextField();
 		cadNome.setBounds(54, 69, 450, 23);
 		contentPane.add(cadNome);
 		cadNome.setColumns(10);
-		
+
 		JLabel textCpf = new JLabel("CPF:");
 		textCpf.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textCpf.setBounds(10, 120, 46, 14);
 		contentPane.add(textCpf);
 		try {
 			MaskFormatter mascaraCpf = new MaskFormatter("###.###.###-##");
-		    cadCpf = new JFormattedTextField(mascaraCpf);
-		    cadCpf.setColumns(10);
-		    cadCpf.setBounds(54, 113, 200, 23);
-		    contentPane.add(cadCpf);				
+			cadCpf = new JFormattedTextField(mascaraCpf);
+			cadCpf.setColumns(10);
+			cadCpf.setBounds(54, 113, 200, 23);
+			contentPane.add(cadCpf);
 		} catch (ParseException e) {
 			e.printStackTrace();
-			
+
 		}
 		try {
 			MaskFormatter mascaraData = new MaskFormatter("##/##/####");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		JLabel textEmail = new JLabel("E-mail:");
 		textEmail.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textEmail.setBounds(10, 166, 66, 14);
 		contentPane.add(textEmail);
-		
+
 		textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(65, 159, 450, 23);
 		contentPane.add(textField);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("Senha:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(10, 217, 66, 23);
 		contentPane.add(lblNewLabel_2);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("Confirme sua senha:");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_3.setBounds(265, 212, 175, 32);
 		contentPane.add(lblNewLabel_3);
-		
+
 		passwordField = new JPasswordField();
 		passwordField.setBounds(65, 214, 150, 23);
 		contentPane.add(passwordField);
-		
+
 		JLabel imagemFundo = new JLabel("");
 		imagemFundo.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		imagemFundo.setBounds(0, 0, 784, 561);
 		contentPane.add(imagemFundo);
-		
+
 		passwordField_1 = new JPasswordField();
 		passwordField_1.setBounds(389, 215, 150, 23);
 		contentPane.add(passwordField_1);

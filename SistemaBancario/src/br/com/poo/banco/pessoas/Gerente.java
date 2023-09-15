@@ -4,18 +4,17 @@ import java.util.Date;
 
 public class Gerente extends Funcionario {
 
-	String agencia;
+    String agencia;
 
-	public Gerente() {
-		super();
+    public Gerente() {
+        super();
 
-	}
+    }
 
-	public Gerente(String nome, String cpf, String email, String cargo, Double salario, String senha,
-			String agencia) {
-		super(nome, cpf, email, cargo, salario, senha);
-		this.agencia = agencia;
-	}
+    public Gerente(String cargo, String nome, String cpf, String email, Double salario, String senha,String agencia) {
+        super(cargo, nome, cpf, email, salario, senha);
+        this.agencia = agencia;
+    }
 
 }
 

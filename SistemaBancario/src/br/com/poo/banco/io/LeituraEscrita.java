@@ -25,7 +25,7 @@ public class LeituraEscrita {
 	static final String PATH_BASICO = "./temp/";
 	static final String EXTENSAO = ".txt";
 	
-	//criando método leitor do banco.txt
+	//criando mÃ©todo leitor do banco.txt
 	public static void leitor(String path) throws IOException
 	{
 		
@@ -40,10 +40,10 @@ public class LeituraEscrita {
 					String[] dados = linha.split(";");
 					
 										
-					if(dados[0].equalsIgnoreCase(ContaEnum.POUPANÇA.getTipoConta())) //ContaPoupança: String tipo, String contaId, String agencia, String cpf, String senha, Double saldo
+					if(dados[0].equalsIgnoreCase(ContaEnum.POUPANÇA.getTipoConta())) //ContaPoupanÃ§a: String tipo, String contaId, String agencia, String cpf, String senha, Double saldo
 					{
 						ContaPoupanca cp = new ContaPoupanca(dados[0], dados[1], dados[2], dados[3], dados[4], Double.parseDouble(dados[5]));
-						//na primeira coluna, fica o identificador único. Nesse caso, cpf.
+						//na primeira coluna, fica o identificador Ãºnico. Nesse caso, cpf.
 						Conta.mapaContas.put(dados[3], cp);
 						System.out.println(cp);
 					}
@@ -54,28 +54,28 @@ public class LeituraEscrita {
 						Conta.mapaContas.put(dados[3], cc);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) //Cliente(String nome, String cpf, String email, String senha)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) //Cliente(String tipo, String nome, String cpf, String email)
 					{ 
 						Cliente c = new Cliente(dados[0], dados[1], dados[2], dados[3]);
-						Cliente.mapaClientes.put(dados[1], c);
+						Cliente.mapaClientes.put(dados[2], c);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.GERENTE.getTipoPessoa())) //Gerente(String nome, String cpf, String email, String cargo, Double salario, String senha,String agencia)	
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.GERENTE.getTipoPessoa())) //Gerente(cargo, nome, cpf, email, salario, senha, agencia)	
 					{
 						Gerente g = new Gerente(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5], dados[6]);
-						Funcionario.mapaFuncionario.put(dados[1], g);
+						Funcionario.mapaFuncionario.put(dados[2], g);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.DIRETOR.getTipoPessoa())) //Diretor(String nome, String cpf, String email, String cargo, Double salario, String senha)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.DIRETOR.getTipoPessoa())) //Diretor(String cargo, String nome, String cpf, String email,  Double salario, String senha)
 					{
 						Diretor d = new Diretor (dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5]);
-						Funcionario.mapaFuncionario.put(dados[1], d);
+						Funcionario.mapaFuncionario.put(dados[2], d);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.PRESIDENTE.getTipoPessoa())) //Presidente(String nome, String cpf, String email, String cargo, Double salario, String senha)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.PRESIDENTE.getTipoPessoa())) //Presidente(String cargo, String nome, String cpf, String email,  Double salario, String senha)
 					{
 						Presidente p = new Presidente(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5]);
-						Funcionario.mapaFuncionario.put(dados[1], p);
+						Funcionario.mapaFuncionario.put(dados[2], p);
 					}
 				}
 				else
@@ -88,7 +88,7 @@ public class LeituraEscrita {
 			//System.out.println(Conta.mapaContas);
 	}
 	
-	//criando método escritor no banco.txt
+	//criando mÃ©todo escritor no banco.txt
 	public static void escritor(String path) throws IOException
 	{
 		String escreve;
@@ -106,7 +106,7 @@ public class LeituraEscrita {
 		buffWriter.close();
 
 	}
-	// Método Comprovante de Saque
+	// MÃ©todo Comprovante de Saque
 	 
 	public static void comprovanteSaque(Conta conta, Double valor) throws IOException {
 		String path = conta.getTipo() + "_" + conta.getCpf();
@@ -114,7 +114,7 @@ public class LeituraEscrita {
 		
 		//biblioteca para data e hora
 				LocalDateTime dataHora = LocalDateTime.now();
-				//formatação do padrão da data
+				//formataÃ§Ã£o do padrÃ£o da data
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
 
@@ -122,7 +122,7 @@ public class LeituraEscrita {
 		buffWrite.append("CPF: "+conta.getCpf()+"\n");
 		buffWrite.append("Conta: "+conta.getContaId()+"\n");
 		buffWrite.append("Valor do saque: R$ "+valor+"\n");
-		buffWrite.append("Operação realizada em "+dtf.format(dataHora)+"\n");
+		buffWrite.append("OperaÃ§Ã£o realizada em "+dtf.format(dataHora)+"\n");
 		buffWrite.append("------------ FIM SAQUE ------------\n\n");
 		
 		buffWrite.close();
