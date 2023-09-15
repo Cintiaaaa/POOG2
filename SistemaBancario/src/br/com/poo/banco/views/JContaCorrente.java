@@ -23,23 +23,8 @@ public class JContaCorrente extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					JContaCorrente frame = new JContaCorrente();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public JContaCorrente() {
+	
+	public JContaCorrente(String nome) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,7 +56,7 @@ public class JContaCorrente extends JFrame {
 		textContaCorrente.setBounds(189, 32, 276, 37);
 		telaContaCorrente.add(textContaCorrente);
 		
-		JLabel TextCC = new JLabel("Seja Bem-Vindo(a) :");
+		JLabel TextCC = new JLabel("Seja Bem-Vindo(a) : " + nome);
 		TextCC.setFont(new Font("Tahoma", Font.BOLD, 11));
 		TextCC.setBounds(32, 82, 141, 14);
 		telaContaCorrente.add(TextCC);

@@ -35,7 +35,7 @@ public class JContaPoupanca extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JContaPoupanca() {
+	public JContaPoupanca(String nome) {
 		setTitle("STBank");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,12 +87,11 @@ public class JContaPoupanca extends JFrame {
 		textNumeroAgenciaCp.setBounds(250, 118, 78, 14);
 		JContaPoupança.add(textNumeroAgenciaCp);
 		
-		JLabel textNumContaPoupança = new JLabel("Número Conta Poupança");
 		textNumContaPoupança.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textNumContaPoupança.setBounds(20, 118, 150, 14);
 		JContaPoupança.add(textNumContaPoupança);
 		
-		JLabel textContaPoupanca = new JLabel("Seja Bem-vindo(a):");
+		JLabel textContaPoupanca = new JLabel("Seja Bem-vindo(a): " + nome);
 		textContaPoupanca.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textContaPoupanca.setBounds(10, 70, 116, 14);
 		JContaPoupança.add(textContaPoupanca);

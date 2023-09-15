@@ -54,28 +54,28 @@ public class LeituraEscrita {
 						Conta.mapaContas.put(dados[3], cc);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) //Cliente(String nome, String cpf, String email, String senha)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) //Cliente(String tipo, String nome, String cpf, String email)
 					{ 
 						Cliente c = new Cliente(dados[0], dados[1], dados[2], dados[3]);
-						Cliente.mapaClientes.put(dados[1], c);
+						Cliente.mapaClientes.put(dados[2], c);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.GERENTE.getTipoPessoa())) //Gerente(String nome, String cpf, String email, String cargo, Double salario, String senha,String agencia)	
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.GERENTE.getTipoPessoa())) //Gerente(cargo, nome, cpf, email, salario, senha, agencia)	
 					{
 						Gerente g = new Gerente(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5], dados[6]);
-						Funcionario.mapaFuncionario.put(dados[1], g);
+						Funcionario.mapaFuncionario.put(dados[2], g);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.DIRETOR.getTipoPessoa())) //Diretor(String nome, String cpf, String email, String cargo, Double salario, String senha)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.DIRETOR.getTipoPessoa())) //Diretor(String cargo, String nome, String cpf, String email,  Double salario, String senha)
 					{
 						Diretor d = new Diretor (dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5]);
-						Funcionario.mapaFuncionario.put(dados[1], d);
+						Funcionario.mapaFuncionario.put(dados[2], d);
 					}
 					
-					else if(dados[0].equalsIgnoreCase(PessoaEnum.PRESIDENTE.getTipoPessoa())) //Presidente(String nome, String cpf, String email, String cargo, Double salario, String senha)
+					else if(dados[0].equalsIgnoreCase(PessoaEnum.PRESIDENTE.getTipoPessoa())) //Presidente(String cargo, String nome, String cpf, String email,  Double salario, String senha)
 					{
 						Presidente p = new Presidente(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5]);
-						Funcionario.mapaFuncionario.put(dados[1], p);
+						Funcionario.mapaFuncionario.put(dados[2], p);
 					}
 				}
 				else

@@ -39,19 +39,7 @@ public class JLogin extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					JLogin frame = new JLogin();
-
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
@@ -89,18 +77,17 @@ public class JLogin extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		JComboBox<String> boxTipoConta = new JComboBox<>();
-        List<ContaEnum> tipoConta = Arrays.asList(ContaEnum.values());
-        boxTipoConta.addItem("Selecione um tipo:");
+		List<ContaEnum> tipoConta = Arrays.asList(ContaEnum.values());
+		boxTipoConta.addItem("Selecione um tipo:");
 
-        for (ContaEnum ce : tipoConta)
-        {
-            boxTipoConta.addItem(ce.getTipoConta());
-        }
+		for (ContaEnum ce : tipoConta) {
+			boxTipoConta.addItem(ce.getTipoConta());
+		}
 
-        boxTipoConta.setToolTipText("");
-        boxTipoConta.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        boxTipoConta.setBounds(120, 317, 368, 35);
-        contentPane.add(boxTipoConta);
+		boxTipoConta.setToolTipText("");
+		boxTipoConta.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		boxTipoConta.setBounds(120, 317, 368, 35);
+		contentPane.add(boxTipoConta);
 
 		JComboBox<String> comboBox = new JComboBox<>();
 		List<PessoaEnum> tipoPessoa = Arrays.asList(PessoaEnum.values());
@@ -139,64 +126,56 @@ public class JLogin extends JFrame {
 //			public void actionPerformed(ActionEvent e) {
 
 				mascaraCpf.setValueContainsLiteralCharacters(true);
-				String cpf;
-				try {
-					cpf = mascaraCpf.valueToString(inputCpf.getText());
+				String cpf = inputCpf.getText();
 
-					String senha = new String(inputPassword.getPassword());
+				String senha = new String(inputPassword.getPassword());
 
-					Cliente c = Cliente.mapaClientes.get(cpf);
-					Funcionario f = Funcionario.mapaFuncionario.get(cpf);
-					Conta c1 = Conta.mapaContas.get(cpf);
+				Cliente c = Cliente.mapaClientes.get(cpf);
+				Funcionario f = Funcionario.mapaFuncionario.get(cpf);
+				Conta c1 = Conta.mapaContas.get(cpf);
 
-					System.out.println(c.getCpf() + " " + c.getSenha() + " " + cpf + " " + senha);
+				//System.out.println(c.getCpf() + " " + c.getSenha() + " " + cpf + " " + senha);
 
-					// validação de cpf e senha
-					if ((c.getCpf().equals(cpf) && c.getSenha().equals(senha))
-							|| (f.getCpf().equals(cpf) && f.getSenha().equals(senha))) {
-						// quem está logando
-						// cliente
-						if (comboBox.getSelectedItem().toString()
-								.equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) {
-							// verificação de tipo de conta
-							if (c1.getTipo().equalsIgnoreCase(ContaEnum.CORRENTE.getTipoConta())) {
+				// validação de cpf e senha
+				if ((c.getCpf().equals(cpf) && c1.getSenha().equals(senha))
+						|| (f.getCpf().equals(cpf) && f.getSenha().equals(senha))) {
+					// quem está logando
+					// cliente
+					if (comboBox.getSelectedItem().toString().equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) {
+						// verificação de tipo de conta
+						if (c1.getTipo().equalsIgnoreCase(ContaEnum.CORRENTE.getTipoConta())) {
+							dispose();
+							JContaCorrente jConCor = new JContaCorrente (c.getNome());
+							jConCor.setLocationRelativeTo(jConCor);
+							jConCor.setVisible(true);
+						} else {
 								dispose();
-								JContaCorrente jConCor = new JContaCorrente();
-								jConCor.setLocationRelativeTo(jConCor);
-								jConCor.setVisible(true);
-							} else {
-								dispose();
-								JContaPoupanca jConPou = new JContaPoupanca();
+								JContaPoupanca jConPou = new JContaPoupanca(c.getNome());
 								jConPou.setLocationRelativeTo(jConPou);
 								jConPou.setVisible(true);
 							}
-						}
-						// gerente
-						else if (comboBox.getSelectedItem().toString().equals(PessoaEnum.GERENTE.getTipoPessoa())) {
+					}
+					// gerente
+					else if (comboBox.getSelectedItem().toString().equals(PessoaEnum.GERENTE.getTipoPessoa())) {
 						dispose();
 						JGerente jGer = new JGerente();
 						jGer.setLocationRelativeTo(jGer);
 						jGer.setVisible(true);
-						}
-						// diretor
-						else if (comboBox.getSelectedItem().toString().equals(PessoaEnum.DIRETOR.getTipoPessoa())) {
+					}
+					// diretor
+					else if (comboBox.getSelectedItem().toString().equals(PessoaEnum.DIRETOR.getTipoPessoa())) {
 						dispose();
 						JDiretor jDir = new JDiretor();
 						jDir.setLocationRelativeTo(jDir);
 						jDir.setVisible(true);
-						}
-						// presidente
-						else if (comboBox.getSelectedItem().toString().equals(PessoaEnum.PRESIDENTE.getTipoPessoa())) {
+					}
+					// presidente
+					else if (comboBox.getSelectedItem().toString().equals(PessoaEnum.PRESIDENTE.getTipoPessoa())) {
 						dispose();
 						JPresidente jPres = new JPresidente();
 						jPres.setLocationRelativeTo(jPres);
 						jPres.setVisible(true);
-						}
 					}
-					// }
-				} catch (ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
 				}
 			});
 			btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 10));

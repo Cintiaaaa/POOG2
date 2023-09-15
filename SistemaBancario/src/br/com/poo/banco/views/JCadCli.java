@@ -18,6 +18,8 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class JCadCli extends JFrame {
 
@@ -70,6 +72,11 @@ public class JCadCli extends JFrame {
 		contentPane.add(textVoltar);
 		
 		JButton cadCadastrar = new JButton("Cadastrar");
+		cadCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			}
+		});
 		cadCadastrar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		cadCadastrar.setBounds(131, 309, 110, 23);
 		contentPane.add(cadCadastrar);

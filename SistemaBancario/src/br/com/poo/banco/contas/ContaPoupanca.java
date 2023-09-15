@@ -14,7 +14,7 @@ public class ContaPoupanca extends Conta {
 
 	public ContaPoupanca(String tipo, String contaId, String agencia, String cpf, String senha, Double saldo) {
 		super(tipo, contaId, agencia, cpf, senha, saldo);
-		this.rendimento = 0.006;
+		this.rendimento = 0.00002;
 	}
 	
 	public Double getSaldoPoupanca() {
@@ -47,7 +47,7 @@ public class ContaPoupanca extends Conta {
     {
         double novoSaldo = this.getSaldo() + valor;
         this.setSaldo(novoSaldo);
-        System.out.println("Foi realizado um depósito de R$ "+valor+".");
+        System.out.println("Foi realizado um depósito de R$ "+ valor +".");
     }
 	
 	// método rendimento por dias
