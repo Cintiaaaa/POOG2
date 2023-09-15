@@ -28,6 +28,7 @@ import javax.swing.text.MaskFormatter;
 import br.com.poo.Enums.ContaEnum;
 import br.com.poo.Enums.PessoaEnum;
 import br.com.poo.banco.contas.Conta;
+import br.com.poo.banco.contas.ContaCorrente;
 import br.com.poo.banco.pessoas.Cliente;
 import br.com.poo.banco.pessoas.Funcionario;
 
@@ -133,19 +134,20 @@ public class JLogin extends JFrame {
 				Cliente c = Cliente.mapaClientes.get(cpf);
 				Funcionario f = Funcionario.mapaFuncionario.get(cpf);
 				Conta c1 = Conta.mapaContas.get(cpf);
+				ContaCorrente cc = ContaCorrente.mapaContaCorrente.get(cpf);
 
 				//System.out.println(c.getCpf() + " " + c.getSenha() + " " + cpf + " " + senha);
 
-				// validaÃ§Ã£o de cpf e senha
+				// validação de cpf e senha
 				if ((c.getCpf().equals(cpf) && c1.getSenha().equals(senha))
 						|| (f.getCpf().equals(cpf) && f.getSenha().equals(senha))) {
 					// quem estÃ¡ logando
 					// cliente
 					if (comboBox.getSelectedItem().toString().equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) {
-						// verificaÃ§Ã£o de tipo de conta
+						// verificação de tipo de conta
 						if (c1.getTipo().equalsIgnoreCase(ContaEnum.CORRENTE.getTipoConta())) {
 							dispose();
-							JContaCorrente jConCor = new JContaCorrente (c.getNome());
+							JContaCorrente jConCor = new JContaCorrente (c.getNome(), c1.getContaId(), c1.getAgencia(), c1.getSaldo(), 500.0);
 							jConCor.setLocationRelativeTo(jConCor);
 							jConCor.setVisible(true);
 						} else {
@@ -190,7 +192,7 @@ public class JLogin extends JFrame {
 		inputPassword.setBounds(120, 243, 368, 35);
 		contentPane.add(inputPassword);
 
-		JLabel lblNewLabel_1 = new JLabel("UsuÃ¡rio");
+		JLabel lblNewLabel_1 = new JLabel("Usuário");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_1.setBounds(120, 93, 46, 14);
 		contentPane.add(lblNewLabel_1);

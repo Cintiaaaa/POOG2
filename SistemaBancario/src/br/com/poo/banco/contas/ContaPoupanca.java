@@ -14,7 +14,6 @@ public class ContaPoupanca extends Conta {
 
 	public ContaPoupanca(String tipo, String contaId, String agencia, String cpf, String senha, Double saldo) {
 		super(tipo, contaId, agencia, cpf, senha, saldo);
-		this.rendimento = 0.006;
 	}
 	
 	public Double getSaldoPoupanca() {

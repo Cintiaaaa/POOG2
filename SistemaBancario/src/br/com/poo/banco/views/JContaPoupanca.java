@@ -19,18 +19,18 @@ public class JContaPoupanca extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					JContaPoupanca frame = new JContaPoupanca();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					JContaPoupanca frame = new JContaPoupanca();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
@@ -45,6 +45,11 @@ public class JContaPoupanca extends JFrame {
 
 		setContentPane(JContaPoupanca);
 		JContaPoupanca.setLayout(null);
+		
+		JLabel textNumContaPoupanca = new JLabel("Número da conta: ");
+		textNumContaPoupanca.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textNumContaPoupanca.setBounds(10, 118, 135, 14);
+		JContaPoupanca.add(textNumContaPoupanca);
 		
 		JLabel textContaPoupanca = new JLabel("Conta Poupanca");
 		textContaPoupanca.setForeground(new Color(0, 0, 128));
@@ -91,10 +96,10 @@ public class JContaPoupanca extends JFrame {
 		textNumContaPoupanca.setBounds(20, 118, 150, 14);
 		JContaPoupanca.add(textNumContaPoupanca);
 		
-		JLabel textContaPoupanca = new JLabel("Seja Bem-vindo(a): " + nome);
-		textContaPoupanca.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textContaPoupanca.setBounds(10, 70, 116, 14);
-		JContaPoupanca.add(textContaPoupanca);
+		JLabel textContaPoupanca1 = new JLabel("Seja Bem-vindo(a): " + nome);
+		textContaPoupanca1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		textContaPoupanca1.setBounds(10, 70, 302, 14);
+		JContaPoupanca.add(textContaPoupanca1);
 		
 		JLabel Fundo = new JLabel("");
 		Fundo.setIcon(new ImageIcon("./imagens//imagemFundo.jpeg"));

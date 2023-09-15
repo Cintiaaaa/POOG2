@@ -1,5 +1,8 @@
 package br.com.poo.banco.contas;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import br.com.poo.banco.pessoas.Cliente;
 
 //definindo atributos da classe.
@@ -7,7 +10,9 @@ import br.com.poo.banco.pessoas.Cliente;
 public class ContaCorrente extends Conta {
 
 	private Double chequeEspecial;
-	private boolean clienteVIP;
+	
+	//definição do mapa
+	public static Map<String, ContaCorrente> mapaContaCorrente = new HashMap<>();
 
 	// construtores
 
@@ -74,9 +79,15 @@ public class ContaCorrente extends Conta {
 
 
 	// gets e sets
+		
+		
 
 	public void setChequeEspecial(Double chequeEspecial) {
 		this.chequeEspecial = chequeEspecial;
+	}
+
+	public Double getChequeEspecial() {
+		return chequeEspecial;
 	}
 
 	// informações da conta
