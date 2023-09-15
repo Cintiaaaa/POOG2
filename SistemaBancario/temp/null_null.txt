@@ -54,3 +54,45 @@ Valor do saque: R$ 50.0
 OperaÃ§Ã£o realizada em 15/09/2023 14:18:59
 ------------ FIM SAQUE ------------
 
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 15:05:44
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 15:07:15
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 15:16:28
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 15:17:18
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 15:47:53
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 16:12:14
+------------ FIM SAQUE ------------
+

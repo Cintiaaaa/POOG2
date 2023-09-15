@@ -157,10 +157,10 @@ public class JLogin extends JFrame {
 								jConPou.setVisible(true);
 							}
 					}
-					// gerente
+					// gerente	
 					else if (comboBox.getSelectedItem().toString().equals(PessoaEnum.GERENTE.getTipoPessoa())) {
 						dispose();
-						JGerente jGer = new JGerente();
+						JGerente jGer = new JGerente(/*f.getCargo(), f.getNome(), f.getCpf(), f.getEmail(), f.getSalario(), f.getSenha(), c1.getAgencia()*/);
 						jGer.setLocationRelativeTo(jGer);
 						jGer.setVisible(true);
 					}
