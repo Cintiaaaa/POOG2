@@ -21,3 +21,4 @@ Autores:<br/>
 <a href="https://github.com/sabrinapereiry">Sabrina Pereira</a><br>
 <a href="https://github.com/Cintiaaaa">Cintia Azevedo</a><br>
 <a href="https://github.com/bordeguilherme">Guilherme Borde</a><br>
+<a href="hhttps://github.com/felipedfe">Felipe Fernandes</a>
