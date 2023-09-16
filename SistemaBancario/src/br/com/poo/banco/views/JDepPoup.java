@@ -108,7 +108,7 @@ public class JDepPoup extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Double valor = Double.parseDouble(textField_1VDep.getText());
-				c1.depositar(valor);
+				cp.depositar(valor);
 				JOptionPane.showConfirmDialog(btnNewButton, "Depósito realizado com sucesso");
 			}
 		});

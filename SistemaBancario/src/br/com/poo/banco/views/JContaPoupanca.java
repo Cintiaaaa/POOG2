@@ -84,7 +84,7 @@ public class JContaPoupanca extends JFrame {
 		ButtonSaque.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				JSaqPou jS = new JSaqPou(cp,c);
+				JSaqPou jS = new JSaqPou(c, cp);
 				jS.setLocationRelativeTo(jS);
 				jS.setVisible(true);
 				
