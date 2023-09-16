@@ -144,7 +144,7 @@ public class LeituraEscrita {
 		buffWrite.append("Conta: "+conta.getContaId()+"\n");
 		buffWrite.append("Valor do saque: R$ "+valor+"\n");
 		buffWrite.append("Valor da tarifa: R$ 0,10.\n");
-		buffWrite.append("OperaÃ§Ã£o realizada em "+dtf.format(dataHora)+"\n");
+		buffWrite.append("Operação realizada em "+dtf.format(dataHora)+"\n");
 		buffWrite.append("------------ FIM SAQUE ------------\n\n");
 		
 		buffWrite.close();

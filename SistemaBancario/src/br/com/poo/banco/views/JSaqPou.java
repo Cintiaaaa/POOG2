@@ -1,27 +1,23 @@
 package br.com.poo.banco.views;
 
-import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 
-import br.com.poo.banco.contas.Conta;
-import br.com.poo.banco.contas.ContaCorrente;
-import br.com.poo.banco.io.LeituraEscrita;
-import br.com.poo.banco.pessoas.Cliente;
-
-public class JSaque extends JFrame {
+public class JSaqPou extends JFrame {
 //Mensagem de saldo na tela 
 	//tela de aviso: saque efetuado com sucesso ou não e por que?
 	private JPanel contentPane;
@@ -30,12 +26,23 @@ public class JSaque extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					JSaque frame = new JSaqPou();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
 	 */
-	public JSaque(ContaCorrente c1, Cliente c) {
+	public JSaqPou() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		
@@ -48,45 +55,25 @@ public class JSaque extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton_1 = new JButton("Voltar");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				dispose();
-				JContaCorrente JConCor = new JContaCorrente(c, c1, 500.0);
-				JConCor.setLocationRelativeTo(JConCor);
-				JConCor.setVisible(true);
-				
-			}
-		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton_1.setBounds(319, 309, 113, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Confirmar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Double valor = Double.parseDouble(textField.getText());
-				c1.sacar(valor);
-				try {
-					LeituraEscrita.comprovanteSaque(c1, valor);
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-				JOptionPane.showConfirmDialog(btnNewButton, "Saque realizado com sucesso.");
-				
-				//adicionar telinha extra de visualizar comprov saque
-			}
-		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton.setBounds(136, 309, 113, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_1 = new JLabel("Saque Conta Corrente");
+		JLabel lblNewLabel_1 = new JLabel("Saque Conta Poupança");
 		lblNewLabel_1.setForeground(new Color(0, 0, 128));
 		lblNewLabel_1.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
 		lblNewLabel_1.setBounds(148, 11, 371, 40);
 		contentPane.add(lblNewLabel_1);
+		
+		JButton buttonNao = new JButton("Não");
+		buttonNao.setFont(new Font("Tahoma", Font.BOLD, 11));
+		buttonNao.setBounds(395, 218, 69, 23);
+		contentPane.add(buttonNao);
 		
 		JButton buttonSim = new JButton("Sim");
 		buttonSim.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -94,34 +81,28 @@ public class JSaque extends JFrame {
 		contentPane.add(buttonSim);
 		
 		JLabel lmpComp = new JLabel("Deseja imprimir o comprovante de");
-		lmpComp.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lmpComp.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lmpComp.setBounds(85, 213, 212, 14);
 		contentPane.add(lmpComp);
 		
 		JLabel ImpComprov = new JLabel("saque ao finalizar a transação?");
-		ImpComprov.setFont(new Font("Tahoma", Font.BOLD, 11));
+		ImpComprov.setFont(new Font("Tahoma", Font.BOLD, 12));
 		ImpComprov.setBounds(85, 227, 212, 14);
 		contentPane.add(ImpComprov);
 		
-		JLabel TarifaSaque = new JLabel("Tarifa para Saque em Conta Corrente: R$0,10 por saque.");
-		TarifaSaque.setFont(new Font("Tahoma", Font.BOLD, 11));
-		TarifaSaque.setForeground(new Color(255, 0, 0));
-		TarifaSaque.setBounds(85, 160, 420, 14);
-		contentPane.add(TarifaSaque);
-		
 		JLabel lblNewLabel_3 = new JLabel("Valor do saque:");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(85, 119, 97, 14);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_3.setBounds(85, 152, 97, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		textField = new JTextField();
-		textField.setBounds(184, 113, 113, 20);
+		textField.setBounds(184, 150, 113, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Seu saldo: R$ "+c1.getSaldo());
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(85, 88, 150, 14);
+		JLabel lblNewLabel_2 = new JLabel("Seu saldo:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_2.setBounds(85, 109, 63, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel = new JLabel("");

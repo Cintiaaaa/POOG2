@@ -1,20 +1,20 @@
 package br.com.poo.banco.views;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.Toolkit;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import br.com.poo.banco.contas.ContaCorrente;
+import br.com.poo.banco.pessoas.Cliente;
 
 public class JContaCorrente extends JFrame {
 //Linkar as telas de: saque, deposito e transferencia
@@ -24,7 +24,7 @@ public class JContaCorrente extends JFrame {
 	 * Launch the application.
 	 */
 	
-	public JContaCorrente(String nome, String contaId, String agencia, Double saldo, Double chequeEspecial) {
+	public JContaCorrente(Cliente c, ContaCorrente c1, Double chequeEspecial) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,6 +41,14 @@ public class JContaCorrente extends JFrame {
 		telaContaCorrente.add(ButtonImpExt);
 		
 		JButton btnSaque = new JButton("Saque");
+		btnSaque.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				JSaque jS = new JSaque (c1, c);
+				jS.setLocationRelativeTo(jS);
+				jS.setVisible(true);
+			}
+		});
 		btnSaque.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnSaque.setBounds(104, 297, 127, 23);
 		telaContaCorrente.add(btnSaque);
@@ -56,32 +64,49 @@ public class JContaCorrente extends JFrame {
 		textContaCorrente.setBounds(189, 32, 276, 37);
 		telaContaCorrente.add(textContaCorrente);
 		
-		JLabel TextCC = new JLabel("Seja Bem-Vindo(a) : " + nome);
+		JLabel TextCC = new JLabel("Seja Bem-Vindo(a) : " + c.getNome());
 		TextCC.setFont(new Font("Tahoma", Font.BOLD, 11));
 		TextCC.setBounds(32, 82, 311, 14);
 		telaContaCorrente.add(TextCC);
 		
-		JButton btnNewButton_1 = new JButton("Deposito");
+		JButton btnNewButton_1 = new JButton("Depósito");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				JDeposito jD = new JDeposito(c, c1);
+				jD.setLocationRelativeTo(jD);
+				jD.setVisible(true);
+			}
+		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton_1.setBounds(304, 263, 111, 23);
 		telaContaCorrente.add(btnNewButton_1);
 		
-		JLabel textAgencia = new JLabel("Agencia: " + agencia);
+		JLabel textAgencia = new JLabel("Agencia: " + c1.getAgencia());
 		textAgencia.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textAgencia.setBounds(376, 122, 141, 14);
 		telaContaCorrente.add(textAgencia);
 		
 		JButton btnNewButton_2 = new JButton("Transferencia");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				JTransferencia jT = new JTransferencia(c, c1);
+				jT.setLocationRelativeTo(jT);
+				jT.setVisible(true);
+				
+			}
+		});
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton_2.setBounds(304, 297, 111, 23);
 		telaContaCorrente.add(btnNewButton_2);
 		
-		JLabel lblNewLabel_2 = new JLabel("Saldo: R$ " + saldo);
+		JLabel lblNewLabel_2 = new JLabel("Saldo: R$ " + c1.getSaldo());
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(32, 165, 119, 14);
 		telaContaCorrente.add(lblNewLabel_2);
 		
-		JLabel textNumeroCc = new JLabel("Número Conta Corrente: "+contaId);
+		JLabel textNumeroCc = new JLabel("Número Conta Corrente: "+c1.getContaId());
 		textNumeroCc.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textNumeroCc.setBounds(31, 117, 260, 25);
 		telaContaCorrente.add(textNumeroCc);
