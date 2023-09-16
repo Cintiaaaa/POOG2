@@ -55,7 +55,7 @@ public class JSaqPou extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
-				JContaPoupanca jConPou = new JContaPopanca(c ,cp ,0.00002);
+				JContaPoupanca jConPou = new JContaPoupanca(c ,cp ,0.00002);
 				jConPou.setLocationRelativeTo(jConPou);
 				jConPou.setVisible(true);
 			}
