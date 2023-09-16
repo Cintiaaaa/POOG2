@@ -39,7 +39,7 @@ public class JPresidente extends JFrame {
 		setTitle("STBank");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 631, 471);
+		setBounds(100, 100, 500, 467);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -49,12 +49,12 @@ public class JPresidente extends JFrame {
 		JLabel textPresidente = new JLabel("Presidente");
 		textPresidente.setForeground(new Color(0, 0, 128));
 		textPresidente.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
-		textPresidente.setBounds(216, 11, 159, 41);
+		textPresidente.setBounds(158, 11, 159, 41);
 		contentPane.add(textPresidente);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
-		lblNewLabel.setBounds(0, 0, 617, 446);
+		lblNewLabel.setBounds(0, 0, 484, 428);
 		contentPane.add(lblNewLabel);
 	}
 

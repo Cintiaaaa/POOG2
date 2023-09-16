@@ -38,7 +38,7 @@ public class JTransferencia extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 631, 471);
+		setBounds(100, 100, 500, 467);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -52,7 +52,7 @@ public class JTransferencia extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("Tarifa para Transferência em Conta Corrente: R$0,20 por transferência.");
 		lblNewLabel_1.setForeground(new Color(255, 0, 0));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_1.setBounds(27, 250, 466, 14);
+		lblNewLabel_1.setBounds(18, 232, 410, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel textComprov = new JLabel("transferência ao finalizar a transação?");
@@ -67,22 +67,22 @@ public class JTransferencia extends JFrame {
 		
 		JLabel textNConta = new JLabel("Número Conta: ");
 		textNConta.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textNConta.setBounds(26, 162, 113, 14);
+		textNConta.setBounds(27, 147, 113, 14);
 		contentPane.add(textNConta);
 		
 		textFieldNConta = new JTextField();
 		textFieldNConta.setColumns(10);
-		textFieldNConta.setBounds(142, 162, 134, 20);
+		textFieldNConta.setBounds(143, 147, 134, 20);
 		contentPane.add(textFieldNConta);
 		
 		textFieldAg = new JTextField();
 		textFieldAg.setColumns(10);
-		textFieldAg.setBounds(142, 134, 134, 20);
+		textFieldAg.setBounds(143, 119, 134, 20);
 		contentPane.add(textFieldAg);
 		
 		JLabel textAgDest = new JLabel("Agência:");
 		textAgDest.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textAgDest.setBounds(27, 137, 113, 14);
+		textAgDest.setBounds(28, 122, 113, 14);
 		contentPane.add(textAgDest);
 		
 		textFieldDest = new JTextField();
@@ -97,7 +97,7 @@ public class JTransferencia extends JFrame {
 		
 		JLabel lblNewLabel_4 = new JLabel("Logo");
 		lblNewLabel_4.setIcon(new ImageIcon("./imagens/logo.png"));
-		lblNewLabel_4.setBounds(539, 355, 69, 69);
+		lblNewLabel_4.setBounds(418, 373, 56, 47);
 		contentPane.add(lblNewLabel_4);
 		
 		JButton btnNewButton_1 = new JButton("Confirmar");
@@ -108,7 +108,7 @@ public class JTransferencia extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton_1.setBounds(163, 362, 113, 23);
+		btnNewButton_1.setBounds(77, 357, 113, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Voltar");
@@ -122,29 +122,29 @@ public class JTransferencia extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton.setBounds(353, 362, 113, 23);
+		btnNewButton.setBounds(267, 357, 113, 23);
 		contentPane.add(btnNewButton);
 		
 		textField = new JTextField();
-		textField.setBounds(163, 205, 115, 19);
+		textField.setBounds(164, 188, 115, 19);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Valor da Transferência:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(26, 206, 146, 19);
+		lblNewLabel_2.setBounds(27, 189, 146, 19);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel Transf = new JLabel("Transferência");
 		Transf.setForeground(new Color(0, 0, 128));
 		Transf.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
-		Transf.setBounds(197, 14, 204, 39);
+		Transf.setBounds(142, 11, 204, 39);
 		contentPane.add(Transf);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
-		lblNewLabel.setBounds(0, 0, 629, 445);
+		lblNewLabel.setBounds(0, 0, 484, 428);
 		contentPane.add(lblNewLabel);
 	}
 }

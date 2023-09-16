@@ -1,4 +1,7 @@
 package br.com.poo.banco.contas;
+import java.util.HashMap;
+import java.util.Map;
+
 import br.com.poo.banco.pessoas.Cliente;
 
 //definindo atributos da classe.
@@ -7,6 +10,8 @@ public class ContaPoupanca extends Conta {
 	
 	private Double rendimento;
 
+	//definição do mapa
+		public static Map<String, ContaPoupanca> mapaContaPoupanca = new HashMap<>();
 // construtores
 	public ContaPoupanca() {
 		super();

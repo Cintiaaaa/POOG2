@@ -5,12 +5,18 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import br.com.poo.banco.contas.ContaPoupanca;
+import br.com.poo.banco.pessoas.Cliente;
+
 import java.awt.Toolkit;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class JContaPoupanca extends JFrame {
 
@@ -19,86 +25,88 @@ public class JContaPoupanca extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					JContaPoupanca frame = new JContaPoupanca();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+//	
 
 	/**
 	 * Create the frame.
 	 */
-	public JContaPoupanca(String nome, String contaId, String agencia, Double saldo) {
+	public JContaPoupanca(Cliente c ,ContaPoupanca cp,Double rendimento) {
 		setTitle("STBank");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 631, 471);
+		setBounds(100, 100, 500, 467);
 		JContaPoupanca = new JPanel();
 		JContaPoupanca.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(JContaPoupanca);
 		JContaPoupanca.setLayout(null);
 		
-		JLabel textNumContaPoupanca = new JLabel("Número da conta: " + contaId);
+		JLabel Logo = new JLabel("");
+		Logo.setIcon(new ImageIcon("./imagens/logo.png"));
+		Logo.setBounds(418, 373, 56, 47);
+		JContaPoupanca.add(Logo);
+		
+		JLabel textNumContaPoupanca = new JLabel("Número da Conta : " + cp.getContaId());
 		textNumContaPoupanca.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textNumContaPoupanca.setBounds(20, 118, 255, 14);
+		textNumContaPoupanca.setBounds(20, 146, 177, 14);
 		JContaPoupanca.add(textNumContaPoupanca);
 		
 		JLabel textContaPoupanca = new JLabel("Conta Poupanca");
 		textContaPoupanca.setForeground(new Color(0, 0, 128));
 		textContaPoupanca.setFont(new Font("Bauhaus 93", Font.BOLD, 31));
-		textContaPoupanca.setBounds(181, 11, 255, 46);
+		textContaPoupanca.setBounds(101, 11, 255, 46);
 		JContaPoupanca.add(textContaPoupanca);
-		
-		JLabel Logo = new JLabel("");
-		Logo.setIcon(new ImageIcon("./imagens/logo.png"));
-		Logo.setBounds(527, 375, 78, 46);
-		JContaPoupanca.add(Logo);
 		
 		JButton buttonExtrato = new JButton("Imprimir Extrato");
 		buttonExtrato.setFont(new Font("Tahoma", Font.BOLD, 11));
-		buttonExtrato.setBounds(121, 225, 154, 23);
+		buttonExtrato.setBounds(31, 263, 132, 23);
 		JContaPoupanca.add(buttonExtrato);
 		
-		JButton ButtonRendimentos = new JButton("Rendimentos");
+		JButton ButtonRendimentos = new JButton("Rendimentos " + cp.getRendimento());
 		ButtonRendimentos.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ButtonRendimentos.setBounds(358, 261, 121, 23);
+		ButtonRendimentos.setBounds(224, 299, 121, 23);
 		JContaPoupanca.add(ButtonRendimentos);
 		
-		JButton ButtonDeposito = new JButton("Deposito");
+		JButton ButtonDeposito = new JButton("Depósito ");
+		ButtonDeposito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				dispose();
+//				JDeposito jD = new JDeposito(c, c1);
+//				jD.setLocationRelativeTo(jD);
+//				jD.setVisible(true);
+			}
+		});
 		ButtonDeposito.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ButtonDeposito.setBounds(358, 225, 121, 23);
+		ButtonDeposito.setBounds(224, 263, 121, 23);
 		JContaPoupanca.add(ButtonDeposito);
 		
-		JButton ButtonSaque = new JButton("Saque");
+		JButton ButtonSaque = new JButton("Saque ");
+		ButtonSaque.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				JSaqPou jS = new JSaqPou(cp,c);
+				jS.setLocationRelativeTo(jS);
+				jS.setVisible(true);
+				
+			}
+		});
 		ButtonSaque.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ButtonSaque.setBounds(121, 261, 154, 23);
+		ButtonSaque.setBounds(31, 299, 132, 23);
 		JContaPoupanca.add(ButtonSaque);
 		
-		JLabel textSaldoCp = new JLabel("Saldo : R$ " + saldo);
+		JLabel textSaldoCp = new JLabel("Saldo : R$ " + cp.getSaldo());
 		textSaldoCp.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textSaldoCp.setBounds(20, 151, 177, 14);
+		textSaldoCp.setBounds(20, 197, 177, 14);
 		JContaPoupanca.add(textSaldoCp);
 		
-		JLabel textNumeroAgenciaCp = new JLabel("Agência " + agencia );
+		JLabel textNumeroAgenciaCp = new JLabel("Agência : " + cp.getAgencia());
 		textNumeroAgenciaCp.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textNumeroAgenciaCp.setBounds(372, 118, 154, 14);
+		textNumeroAgenciaCp.setBounds(20, 167, 154, 14);
 		JContaPoupanca.add(textNumeroAgenciaCp);
 		
-		textNumContaPoupanca.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textNumContaPoupanca.setBounds(20, 118, 150, 14);
-		JContaPoupanca.add(textNumContaPoupanca);
-		
-		JLabel textContaPoupanca1 = new JLabel("Seja Bem-vindo(a): " + nome);
+		JLabel textContaPoupanca1 = new JLabel("Seja Bem-vindo(a): " + c.getNome());
 		textContaPoupanca1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textContaPoupanca1.setBounds(10, 70, 316, 14);
+		textContaPoupanca1.setBounds(10, 95, 316, 14);
 		JContaPoupanca.add(textContaPoupanca1);
 		
 		JLabel Fundo = new JLabel("");

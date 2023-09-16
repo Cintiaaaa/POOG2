@@ -14,6 +14,8 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import javax.swing.UIManager;
 
 public class JDiretor extends JFrame {
 
@@ -49,25 +51,43 @@ public class JDiretor extends JFrame {
 		setTitle("STBank");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 631, 471);
+		setBounds(100, 100, 500, 467);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JButton ButtonVoltar = new JButton("Voltar");
+		ButtonVoltar.setFont(new Font("Tahoma", Font.BOLD, 11));
+		ButtonVoltar.setBackground(UIManager.getColor("Button.background"));
+		ButtonVoltar.setBounds(211, 373, 89, 23);
+		contentPane.add(ButtonVoltar);
+		
+		JButton ButtonCadastrar = new JButton("Cadastrar");
+		ButtonCadastrar.setFont(new Font("Tahoma", Font.BOLD, 11));
+		ButtonCadastrar.setBackground(new Color(240, 240, 240));
+		ButtonCadastrar.setBounds(79, 373, 89, 23);
+		contentPane.add(ButtonCadastrar);
+		
+		JLabel JDiretor = new JLabel("Diretor");
+		JDiretor.setForeground(new Color(0, 0, 128));
+		JDiretor.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
+		JDiretor.setBounds(180, 11, 113, 37);
+		contentPane.add(JDiretor);
+		
 		JLabel Logo = new JLabel("");
 		Logo.setIcon(new ImageIcon("C:\\dev\\POO\\Workspace\\POOG2\\SistemaBancario\\imagens\\logo.png"));
-		Logo.setBounds(536, 370, 69, 51);
+		Logo.setBounds(418, 373, 56, 47);
 		contentPane.add(Logo);
 		
 		passwordFieldCSenha = new JPasswordField();
-		passwordFieldCSenha.setBounds(374, 271, 159, 20);
+		passwordFieldCSenha.setBounds(128, 311, 159, 20);
 		contentPane.add(passwordFieldCSenha);
 		
 		JLabel textConfirmaSenha = new JLabel("Confirme sua senha: ");
 		textConfirmaSenha.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textConfirmaSenha.setBounds(254, 274, 128, 14);
+		textConfirmaSenha.setBounds(10, 314, 128, 14);
 		contentPane.add(textConfirmaSenha);
 		
 		passwordFieldDiretor = new JPasswordField();
@@ -126,14 +146,8 @@ public class JDiretor extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
-		lblNewLabel.setBounds(0, 0, 615, 432);
+		lblNewLabel.setBounds(0, 0, 484, 432);
 		contentPane.add(lblNewLabel);
-		
-		JLabel JDiretor = new JLabel("Diretor");
-		JDiretor.setForeground(new Color(0, 0, 128));
-		JDiretor.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
-		JDiretor.setBounds(269, 21, 113, 37);
-		contentPane.add(JDiretor);
 		
 		JLabel textCpf = new JLabel("CPF:");
 		textCpf.setFont(new Font("Tahoma", Font.BOLD, 11));
