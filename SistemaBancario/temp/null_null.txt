@@ -96,3 +96,79 @@ Valor do saque: R$ 50.0
 OperaÃ§Ã£o realizada em 15/09/2023 16:12:14
 ------------ FIM SAQUE ------------
 
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 19:11:40
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 19:12:43
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 19:13:17
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+OperaÃ§Ã£o realizada em 15/09/2023 19:15:08
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+Valor da tarifa: R$ 0,10.
+OperaÃ§Ã£o realizada em 15/09/2023 20:26:45
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+Valor da tarifa: R$ 0,10.
+OperaÃ§Ã£o realizada em 15/09/2023 20:29:14
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+Valor da tarifa: R$ 0,10.
+OperaÃ§Ã£o realizada em 15/09/2023 20:59:39
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+Valor da tarifa: R$ 0,10.
+OperaÃ§Ã£o realizada em 15/09/2023 21:03:26
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+Valor da tarifa: R$ 0,10.
+OperaÃ§Ã£o realizada em 15/09/2023 21:15:36
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+Valor da tarifa: R$ 0,10.
+OperaÃ§Ã£o realizada em 15/09/2023 21:16:05
+------------ FIM SAQUE ------------
+

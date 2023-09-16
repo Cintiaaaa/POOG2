@@ -66,7 +66,8 @@ public class LeituraEscrita {
 					
 					else if(dados[0].equalsIgnoreCase(PessoaEnum.GERENTE.getTipoPessoa())) 
 					{
-						Gerente g = new Gerente(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), dados[5], dados[6]);
+						//String cargo, String nome, String cpf, String email, String senha, Double salario,String agencia
+						Gerente g = new Gerente(dados[0], dados[1], dados[2], dados[3], dados[4], Double.parseDouble(dados[5]), dados[6]);
 						Funcionario.mapaFuncionario.put(dados[2], g);
 					}
 					
@@ -142,6 +143,7 @@ public class LeituraEscrita {
 		buffWrite.append("CPF: "+conta.getCpf()+"\n");
 		buffWrite.append("Conta: "+conta.getContaId()+"\n");
 		buffWrite.append("Valor do saque: R$ "+valor+"\n");
+		buffWrite.append("Valor da tarifa: R$ 0,10.\n");
 		buffWrite.append("OperaÃ§Ã£o realizada em "+dtf.format(dataHora)+"\n");
 		buffWrite.append("------------ FIM SAQUE ------------\n\n");
 		

@@ -35,7 +35,7 @@ public class JContaPoupanca extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JContaPoupanca(String nome, String contaId, String agencia, String cpf, String senha, Double saldo) {
+	public JContaPoupanca(String nome, String contaId, String agencia, Double saldo) {
 		setTitle("STBank");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,7 +48,7 @@ public class JContaPoupanca extends JFrame {
 		
 		JLabel textNumContaPoupanca = new JLabel("Número da conta: " + contaId);
 		textNumContaPoupanca.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textNumContaPoupanca.setBounds(20, 118, 229, 14);
+		textNumContaPoupanca.setBounds(20, 118, 255, 14);
 		JContaPoupanca.add(textNumContaPoupanca);
 		
 		JLabel textContaPoupanca = new JLabel("Conta Poupanca");
@@ -58,7 +58,7 @@ public class JContaPoupanca extends JFrame {
 		JContaPoupanca.add(textContaPoupanca);
 		
 		JLabel Logo = new JLabel("");
-		Logo.setIcon(new ImageIcon("./imagens//logo.png"));
+		Logo.setIcon(new ImageIcon("./imagens/logo.png"));
 		Logo.setBounds(527, 375, 78, 46);
 		JContaPoupanca.add(Logo);
 		
@@ -98,11 +98,11 @@ public class JContaPoupanca extends JFrame {
 		
 		JLabel textContaPoupanca1 = new JLabel("Seja Bem-vindo(a): " + nome);
 		textContaPoupanca1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textContaPoupanca1.setBounds(10, 70, 302, 14);
+		textContaPoupanca1.setBounds(10, 70, 316, 14);
 		JContaPoupanca.add(textContaPoupanca1);
 		
 		JLabel Fundo = new JLabel("");
-		Fundo.setIcon(new ImageIcon("./imagens//imagemFundo.jpeg"));
+		Fundo.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
 		Fundo.setBounds(0, 0, 615, 432);
 		JContaPoupanca.add(Fundo);
 	}

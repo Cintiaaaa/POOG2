@@ -40,10 +40,10 @@ public class JContaCorrente extends JFrame {
 		ButtonImpExt.setBounds(104, 263, 127, 23);
 		telaContaCorrente.add(ButtonImpExt);
 		
-		JButton btnNewButton = new JButton("Saque");
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton.setBounds(104, 297, 127, 23);
-		telaContaCorrente.add(btnNewButton);
+		JButton btnSaque = new JButton("Saque");
+		btnSaque.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnSaque.setBounds(104, 297, 127, 23);
+		telaContaCorrente.add(btnSaque);
 		
 		JLabel textChequeEspecial = new JLabel("Limite Cheque Especial: R$ " + chequeEspecial);
 		textChequeEspecial.setFont(new Font("Tahoma", Font.BOLD, 11));

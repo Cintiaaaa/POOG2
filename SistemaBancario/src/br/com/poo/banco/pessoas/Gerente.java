@@ -11,8 +11,8 @@ public class Gerente extends Funcionario {
 
     }
 
-    public Gerente(String cargo, String nome, String cpf, String email, Double salario, String senha,String agencia) {
-        super(cargo, nome, cpf, email, salario, senha);
+    public Gerente(String cargo, String nome, String cpf, String email, String senha, Double salario,String agencia) {
+        super(cargo, nome, cpf, email, senha, salario);
         this.agencia = agencia;
     }
     
