@@ -1,19 +1,23 @@
 package br.com.poo.banco.views;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JTextField;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
-import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import br.com.poo.banco.contas.Conta;
+import br.com.poo.banco.contas.ContaCorrente;
+import br.com.poo.banco.pessoas.Cliente;
 
 public class JTransferencia extends JFrame {
 
@@ -26,23 +30,11 @@ public class JTransferencia extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					JTransferencia frame = new JTransferencia();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public JTransferencia() {
+	public JTransferencia(Cliente c, ContaCorrente c1) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,17 +45,15 @@ public class JTransferencia extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("Sim");
+		chckbxNewCheckBox.setBounds(266, 294, 97, 23);
+		contentPane.add(chckbxNewCheckBox);
+		
 		JLabel lblNewLabel_1 = new JLabel("Tarifa para Transferência em Conta Corrente: R$0,20 por transferência.");
 		lblNewLabel_1.setForeground(new Color(255, 0, 0));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_1.setBounds(27, 250, 466, 14);
 		contentPane.add(lblNewLabel_1);
-		
-		JComboBox comboBoxOpcao = new JComboBox();
-		comboBoxOpcao.setFont(new Font("Tahoma", Font.BOLD, 11));
-		comboBoxOpcao.setModel(new DefaultComboBoxModel(new String[] {"Selecione uma opção", "Sim", "Não"}));
-		comboBoxOpcao.setBounds(251, 283, 189, 22);
-		contentPane.add(comboBoxOpcao);
 		
 		JLabel textComprov = new JLabel("transferência ao finalizar a transação?");
 		textComprov.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -85,21 +75,10 @@ public class JTransferencia extends JFrame {
 		textFieldNConta.setBounds(142, 162, 134, 20);
 		contentPane.add(textFieldNConta);
 		
-		JComboBox comboBoxTipoCont = new JComboBox();
-		comboBoxTipoCont.setFont(new Font("Tahoma", Font.BOLD, 11));
-		comboBoxTipoCont.setModel(new DefaultComboBoxModel(new String[] {"Selecione uma opção:", "Conta Corrente", "Conta Poupança"}));
-		comboBoxTipoCont.setBounds(142, 105, 217, 22);
-		contentPane.add(comboBoxTipoCont);
-		
 		textFieldAg = new JTextField();
 		textFieldAg.setColumns(10);
 		textFieldAg.setBounds(142, 134, 134, 20);
 		contentPane.add(textFieldAg);
-		
-		JLabel textTipoCont = new JLabel("Tipo de Conta:");
-		textTipoCont.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textTipoCont.setBounds(25, 109, 113, 14);
-		contentPane.add(textTipoCont);
 		
 		JLabel textAgDest = new JLabel("Agência:");
 		textAgDest.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -122,11 +101,26 @@ public class JTransferencia extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JButton btnNewButton_1 = new JButton("Confirmar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				c1.transferir(c1, c1, ABORT);
+			}
+		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton_1.setBounds(163, 362, 113, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Voltar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				dispose();
+				JContaCorrente JConCor = new JContaCorrente(c, c1, 500.0);
+				JConCor.setLocationRelativeTo(JConCor);
+				JConCor.setVisible(true);
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton.setBounds(353, 362, 113, 23);
 		contentPane.add(btnNewButton);

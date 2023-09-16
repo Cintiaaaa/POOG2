@@ -139,15 +139,15 @@ public class JLogin extends JFrame {
 				//System.out.println(c.getCpf() + " " + c.getSenha() + " " + cpf + " " + senha);
 
 				// validação de cpf e senha
-				if ((c.getCpf().equals(cpf) && c1.getSenha().equals(senha))
-						|| (f.getCpf().equals(cpf) && f.getSenha().equals(senha))) {
-					// quem estÃ¡ logando
+				if ((c!= null && c.getCpf().equals(cpf) && c1.getSenha().equals(senha))
+						|| (f!=null && f.getCpf().equals(cpf) && f.getSenha().equals(senha))) {
+					// quem está logando
 					// cliente
 					if (comboBox.getSelectedItem().toString().equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) {
 						// verificação de tipo de conta
 						if (c1.getTipo().equalsIgnoreCase(ContaEnum.CORRENTE.getTipoConta())) {
 							dispose();
-							JContaCorrente jConCor = new JContaCorrente (c.getNome(), c1.getContaId(), c1.getAgencia(), c1.getSaldo(), 500.0);
+							JContaCorrente jConCor = new JContaCorrente (c, cc, 500.0);
 							jConCor.setLocationRelativeTo(jConCor);
 							jConCor.setVisible(true);
 						} else {

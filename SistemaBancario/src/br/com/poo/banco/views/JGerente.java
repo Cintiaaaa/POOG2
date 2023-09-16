@@ -107,6 +107,14 @@ public class JGerente extends JFrame {
 		contentPane.add(comboBoxTipoConta);
 
 		JButton ButtonVoltar = new JButton("Voltar");
+		ButtonVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				JLogin jLog = new JLogin();
+				jLog.setLocationRelativeTo(jLog);
+				jLog.setVisible(true);
+			}
+		});
 		ButtonVoltar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		ButtonVoltar.setBounds(304, 340, 116, 23);
 		contentPane.add(ButtonVoltar);
@@ -123,7 +131,7 @@ public class JGerente extends JFrame {
 				String confSenha = new String(passwordFieldCSenha.getPassword());
 				Double saldo = 0.00;
 				Double rendimento = 0.00;
-				String contaId = textNconta.getText();
+				String contaId = textFieldNconta.getText();
 				Double chequeEspecial = 0.00;
 
 				if (nome.isEmpty() || cpf.isEmpty() || email.isEmpty() || agencia.isEmpty() || senha.isEmpty()
@@ -154,6 +162,10 @@ public class JGerente extends JFrame {
 								+ ";" + senha + ";" + saldo;
 					}
 					JOptionPane.showMessageDialog(FinalizarCadastro, "Cadastro realizado com sucesso!");
+					dispose();
+					JGerente jGer = new JGerente();
+					jGer.setLocationRelativeTo(jGer);
+					jGer.setVisible(true);
 					
 					try {
 						LeituraEscrita.escritor("banco", cliente, conta);
