@@ -29,6 +29,7 @@ import br.com.poo.Enums.ContaEnum;
 import br.com.poo.Enums.PessoaEnum;
 import br.com.poo.banco.contas.Conta;
 import br.com.poo.banco.contas.ContaCorrente;
+import br.com.poo.banco.contas.ContaPoupanca;
 import br.com.poo.banco.pessoas.Cliente;
 import br.com.poo.banco.pessoas.Funcionario;
 
@@ -51,7 +52,7 @@ public class JLogin extends JFrame {
 		Date data = new Date();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 631, 471);
+		setBounds(100, 100, 500, 467);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(192, 192, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,17 +62,17 @@ public class JLogin extends JFrame {
 
 		JLabel textTipoConta = new JLabel("Tipo de Conta:");
 		textTipoConta.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textTipoConta.setBounds(120, 301, 182, 14);
+		textTipoConta.setBounds(51, 301, 182, 14);
 		contentPane.add(textTipoConta);
 
 		JLabel lblNewLabel_4 = new JLabel("Logo");
 		lblNewLabel_4.setIcon(new ImageIcon("./imagens/logo.png"));
-		lblNewLabel_4.setBounds(528, 357, 75, 63);
+		lblNewLabel_4.setBounds(418, 373, 56, 47);
 		contentPane.add(lblNewLabel_4);
 
 		JLabel lblNewLabel = new JLabel("Login");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(240, 23, 118, 54);
+		lblNewLabel.setBounds(173, 23, 118, 54);
 		lblNewLabel.setForeground(new Color(0, 0, 128));
 		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.BOLD, 36));
@@ -87,7 +88,7 @@ public class JLogin extends JFrame {
 
 		boxTipoConta.setToolTipText("");
 		boxTipoConta.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		boxTipoConta.setBounds(120, 317, 368, 35);
+		boxTipoConta.setBounds(51, 317, 368, 35);
 		contentPane.add(boxTipoConta);
 
 		JComboBox<String> comboBox = new JComboBox<>();
@@ -111,7 +112,7 @@ public class JLogin extends JFrame {
 		});
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		comboBox.setToolTipText("");
-		comboBox.setBounds(120, 108, 368, 35);
+		comboBox.setBounds(51, 103, 368, 35);
 		contentPane.add(comboBox);
 
 		try {
@@ -119,7 +120,7 @@ public class JLogin extends JFrame {
 			JTextField inputCpf = new JFormattedTextField(mascaraCpf);
 //			System.out.println(mascaraCpf + " " + inputCpf);
 			inputCpf.setColumns(10);
-			inputCpf.setBounds(120, 177, 200, 32);
+			inputCpf.setBounds(51, 177, 200, 32);
 			contentPane.add(inputCpf);
 
 			JButton btnNewButton = new JButton("Entrar");
@@ -135,7 +136,8 @@ public class JLogin extends JFrame {
 				Funcionario f = Funcionario.mapaFuncionario.get(cpf);
 				Conta c1 = Conta.mapaContas.get(cpf);
 				ContaCorrente cc = ContaCorrente.mapaContaCorrente.get(cpf);
-
+				ContaPoupanca cp = ContaPoupanca.mapaContaPoupanca.get(cpf);
+			
 				//System.out.println(c.getCpf() + " " + c.getSenha() + " " + cpf + " " + senha);
 
 				// validação de cpf e senha
@@ -152,7 +154,7 @@ public class JLogin extends JFrame {
 							jConCor.setVisible(true);
 						} else {
 								dispose();
-								JContaPoupanca jConPou = new JContaPoupanca(c.getNome(),c1.getContaId(),c1.getAgencia(),c1.getSaldo());
+								JContaPoupanca jConPou = new JContaPoupanca(c,cp,0.00002);
 								jConPou.setLocationRelativeTo(jConPou);
 								jConPou.setVisible(true);
 							}
@@ -181,7 +183,7 @@ public class JLogin extends JFrame {
 				}
 			});
 			btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 10));
-			btnNewButton.setBounds(240, 374, 95, 29);
+			btnNewButton.setBounds(170, 374, 95, 29);
 			contentPane.add(btnNewButton);
 
 		} catch (ParseException e) {
@@ -189,22 +191,22 @@ public class JLogin extends JFrame {
 		}
 
 		inputPassword = new JPasswordField();
-		inputPassword.setBounds(120, 243, 368, 35);
+		inputPassword.setBounds(51, 243, 368, 35);
 		contentPane.add(inputPassword);
 
 		JLabel lblNewLabel_1 = new JLabel("Usuário");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_1.setBounds(120, 93, 46, 14);
+		lblNewLabel_1.setBounds(51, 88, 46, 14);
 		contentPane.add(lblNewLabel_1);
 
 		JLabel textcpf = new JLabel("CPF");
 		textcpf.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textcpf.setBounds(120, 163, 46, 14);
+		textcpf.setBounds(51, 163, 46, 14);
 		contentPane.add(textcpf);
 
 		JLabel lblNewLabel_3 = new JLabel("Senha");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(120, 229, 46, 14);
+		lblNewLabel_3.setBounds(51, 229, 46, 14);
 		contentPane.add(lblNewLabel_3);
 
 		JLabel textCPF = new JLabel("");

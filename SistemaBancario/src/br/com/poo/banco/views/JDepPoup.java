@@ -16,10 +16,11 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import br.com.poo.banco.contas.ContaCorrente;
+import br.com.poo.banco.contas.ContaPoupanca;
 import br.com.poo.banco.pessoas.Cliente;
 import javax.swing.JCheckBox;
 
-public class JDeposito extends JFrame {
+public class JDepPoup extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField_1VDep;
@@ -43,11 +44,11 @@ public class JDeposito extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JDeposito(Cliente c, ContaCorrente c1) {
+	public JDepPoup(Cliente c, ContaPoupanca cp) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./imagens/logo.png"));
 		setTitle("STBank");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 633, 473);
+		setBounds(100, 100, 500, 467);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -60,9 +61,9 @@ public class JDeposito extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
-				JContaCorrente JConCor = new JContaCorrente(c, c1, 500.0);
-				JConCor.setLocationRelativeTo(JConCor);
-				JConCor.setVisible(true);
+				JContaPoupanca jConPou = new JContaPoupanca(c, cp, 0.00002);
+				jConPou.setLocationRelativeTo(jConPou);
+				jConPou.setVisible(true);
 			}
 		});
 		
@@ -71,35 +72,35 @@ public class JDeposito extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		chckbxNewCheckBox.setBounds(288, 279, 97, 38);
-		contentPane.add(chckbxNewCheckBox);
 		
-		JLabel tarifa = new JLabel("Tarifa para Depósito em Conta Corrente: R$0,10 por depósito.");
-		tarifa.setForeground(new Color(255, 0, 0));
-		tarifa.setFont(new Font("Tahoma", Font.BOLD, 11));
-		tarifa.setBounds(72, 243, 355, 14);
-		contentPane.add(tarifa);
+		JLabel lblNewLabel_1 = new JLabel("Depósito Conta Poupança");
+		lblNewLabel_1.setForeground(new Color(0, 0, 128));
+		lblNewLabel_1.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
+		lblNewLabel_1.setBounds(34, 23, 410, 30);
+		contentPane.add(lblNewLabel_1);
+		chckbxNewCheckBox.setBounds(250, 183, 97, 38);
+		contentPane.add(chckbxNewCheckBox);
 		
 		JLabel textImpComprov = new JLabel("depósito ao finalizar a transação?");
 		textImpComprov.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textImpComprov.setBounds(72, 298, 232, 14);
+		textImpComprov.setBounds(34, 202, 232, 14);
 		contentPane.add(textImpComprov);
 		
 		JLabel textImpComp = new JLabel("Deseja imprimir o comprovante de");
 		textImpComp.setFont(new Font("Tahoma", Font.BOLD, 11));
-		textImpComp.setBounds(72, 279, 218, 14);
+		textImpComp.setBounds(34, 183, 218, 14);
 		contentPane.add(textImpComp);
 		
 		textField_1VDep = new JTextField();
 		textField_1VDep.setColumns(10);
-		textField_1VDep.setBounds(191, 207, 144, 19);
+		textField_1VDep.setBounds(153, 100, 144, 19);
 		contentPane.add(textField_1VDep);
 		
 		JLabel ValorDep = new JLabel("Valor para depósito:");
 		ValorDep.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ValorDep.setBounds(72, 210, 127, 14);
+		ValorDep.setBounds(34, 103, 127, 14);
 		contentPane.add(ValorDep);
-		btnNewButton_1.setBounds(314, 345, 113, 23);
+		btnNewButton_1.setBounds(267, 285, 113, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Confirmar");
@@ -111,23 +112,17 @@ public class JDeposito extends JFrame {
 				JOptionPane.showConfirmDialog(btnNewButton, "Depósito realizado com sucesso");
 			}
 		});
-		btnNewButton.setBounds(132, 345, 113, 23);
+		btnNewButton.setBounds(85, 285, 113, 23);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_4 = new JLabel("Logo");
 		lblNewLabel_4.setIcon(new ImageIcon("./imagens/logo.png"));
-		lblNewLabel_4.setBounds(528, 357, 75, 63);
+		lblNewLabel_4.setBounds(418, 373, 56, 47);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("./imagens/imagemFundo.jpeg"));
-		lblNewLabel.setBounds(0, 0, 631, 447);
+		lblNewLabel.setBounds(0, 0, 484, 447);
 		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Depósito");
-		lblNewLabel_1.setForeground(new Color(0, 0, 128));
-		lblNewLabel_1.setFont(new Font("Bauhaus 93", Font.BOLD, 30));
-		lblNewLabel_1.setBounds(239, 25, 134, 30);
-		contentPane.add(lblNewLabel_1);
 	}
 }
