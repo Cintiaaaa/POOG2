@@ -19,7 +19,7 @@ public abstract class Funcionario  {
 	public Funcionario() {
 		
 	}
-	public Funcionario(String nome, String cpf, String email, String cargo, Double salario, String senha) {
+	public Funcionario(String cargo, String nome, String cpf, String email, String senha, Double salario) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;

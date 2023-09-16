@@ -20,3 +20,5 @@ Diretor;Diogo Nogueira;544.111.000-02;diogo@stbank.com;20000.00;58794;
 Diretor;Marcela Lopes;123.456.789-10;marcela@stbank.com;20000.00;87592;
 Diretor;Joana Fagundes;321.654.987.11;joana@stbank.com;20000.00;58794;
 Presidente;Luana Silva;789.654.321-22;luana@stbank.com;50000.00;0054321;
+Cliente;123456;123.456.789-10;132@gmail.com
+Corrente;Número da Conta:;0001;123.456.789-10;123;0.0;0.0

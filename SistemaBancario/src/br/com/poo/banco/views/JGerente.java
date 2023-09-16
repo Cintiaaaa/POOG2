@@ -50,6 +50,7 @@ public class JGerente extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					LeituraEscrita.leitor("banco");
 					JGerente frame = new JGerente();
 					frame.setVisible(true);
 				} catch (Exception e) {
