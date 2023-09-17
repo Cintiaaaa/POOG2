@@ -260,3 +260,19 @@ Valor da tarifa: R$ 0,10.
 Operação realizada em 16/09/2023 16:14:08
 ------------ FIM SAQUE ------------
 
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+Valor da tarifa: R$ 0,10.
+Operação realizada em 17/09/2023 13:13:14
+------------ FIM SAQUE ------------
+
+-------------- SAQUE --------------
+CPF: null
+Conta: null
+Valor do saque: R$ 50.0
+Valor da tarifa: R$ 0,10.
+Operação realizada em 17/09/2023 13:13:56
+------------ FIM SAQUE ------------
+

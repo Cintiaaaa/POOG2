@@ -1,22 +1,20 @@
 package br.com.poo.banco.views;
 
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import br.com.poo.banco.contas.ContaPoupanca;
 import br.com.poo.banco.pessoas.Cliente;
-
-import java.awt.Toolkit;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import java.awt.Font;
-import java.awt.Color;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class JContaPoupanca extends JFrame {
 
@@ -70,10 +68,10 @@ public class JContaPoupanca extends JFrame {
 		JButton ButtonDeposito = new JButton("Depósito ");
 		ButtonDeposito.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				dispose();
-//				JDeposito jD = new JDeposito(c, c1);
-//				jD.setLocationRelativeTo(jD);
-//				jD.setVisible(true);
+				dispose();
+				JDepPoup jDP = new JDepPoup(c, cp);
+				jDP.setLocationRelativeTo(jDP);
+				jDP.setVisible(true);
 			}
 		});
 		ButtonDeposito.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -84,7 +82,7 @@ public class JContaPoupanca extends JFrame {
 		ButtonSaque.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				JSaqPou jS = new JSaqPou(c, cp);
+				JSaqPou jS = new JSaqPou(c, cp, rendimento);
 				jS.setLocationRelativeTo(jS);
 				jS.setVisible(true);
 				

@@ -81,7 +81,7 @@ public class JSaqPou extends JFrame {
 				Double valor = Double.parseDouble(textField.getText());
 				cp.sacar(valor);
 				try {
-					LeituraEscrita.comprovanteSaque(cp, valor);
+					LeituraEscrita.comprovanteSaqPou(cp, valor);
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
