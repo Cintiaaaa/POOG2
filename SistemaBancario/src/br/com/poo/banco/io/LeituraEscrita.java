@@ -127,7 +127,7 @@ public class LeituraEscrita {
             }
         } 
     }
-	// Método Comprovante de Saque
+	// Método Comprovante de Saque com tarifa
 	 
 	public static void comprovanteSaque(Conta conta, Double valor) throws IOException {
 		String path = conta.getTipo() + "_" + conta.getCpf();
@@ -135,7 +135,7 @@ public class LeituraEscrita {
 		
 		//biblioteca para data e hora
 				LocalDateTime dataHora = LocalDateTime.now();
-				//formataÃ§Ã£o do padrÃ£o da data
+				//formatação do padrão da data
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
 
@@ -149,5 +149,98 @@ public class LeituraEscrita {
 		
 		buffWrite.close();
 	}
+	
+	// Método Comprovante de Saque sem tarifa
+	 
+	public static void comprovanteSaqPou(Conta conta, Double valor) throws IOException {
+		String path = conta.getTipo() + "_" + conta.getCpf();
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + path + EXTENSAO, true));
+		
+		//biblioteca para data e hora
+				LocalDateTime dataHora = LocalDateTime.now();
+				//formatação do padrão da data
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+
+		buffWrite.append("-------------- SAQUE --------------\n");
+		buffWrite.append("CPF: "+conta.getCpf()+"\n");
+		buffWrite.append("Conta: "+conta.getContaId()+"\n");
+		buffWrite.append("Valor do saque: R$ "+valor+"\n");
+		buffWrite.append("Operação realizada em "+dtf.format(dataHora)+"\n");
+		buffWrite.append("------------ FIM SAQUE ------------\n\n");
+		
+		buffWrite.close();
+	}
+	
+	// Método Comprovante de Depósito sem tarifa
+	 
+	public static void comprovanteDepPou(Conta conta, Double valor) throws IOException {
+		String path = conta.getTipo() + "_" + conta.getCpf();
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + path + EXTENSAO, true));
+		
+		//biblioteca para data e hora
+				LocalDateTime dataHora = LocalDateTime.now();
+				//formatação do padrão da data
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+
+		buffWrite.append("-------------- DEPÓSITO --------------\n");
+		buffWrite.append("CPF: "+conta.getCpf()+"\n");
+		buffWrite.append("Conta: "+conta.getContaId()+"\n");
+		buffWrite.append("Valor do depósito: R$ "+valor+"\n");
+		buffWrite.append("Operação realizada em "+dtf.format(dataHora)+"\n");
+		buffWrite.append("------------ FIM DEPÓSITO ------------\n\n");
+		
+		buffWrite.close();
+	}
+	
+	// Método Comprovante de Depósito com tarifa
+	 
+	public static void comprovanteDepCor(Conta conta, Double valor) throws IOException {
+		String path = conta.getTipo() + "_" + conta.getCpf();
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + path + EXTENSAO, true));
+		
+		//biblioteca para data e hora
+				LocalDateTime dataHora = LocalDateTime.now();
+				//formatação do padrão da data
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+
+		buffWrite.append("-------------- DEPÓSITO --------------\n");
+		buffWrite.append("CPF: "+conta.getCpf()+"\n");
+		buffWrite.append("Conta: "+conta.getContaId()+"\n");
+		buffWrite.append("Valor do depósito: R$ "+valor+"\n");
+		buffWrite.append("Valor da tarifa: R$ 0,10.\n");
+		buffWrite.append("Operação realizada em "+dtf.format(dataHora)+"\n");
+		buffWrite.append("------------ FIM DEPÓSITO ------------\n\n");
+		
+		buffWrite.close();
+	}
+	
+	// Método Comprovante de Depósito com tarifa
+	 
+	public static void comprovanteTransf(Conta remetente, Conta destino, Double valor) throws IOException {
+		String path = remetente.getTipo() + "_" + remetente.getCpf();
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + path + EXTENSAO, true));
+		
+		//biblioteca para data e hora
+				LocalDateTime dataHora = LocalDateTime.now();
+				//formatação do padrão da data
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+
+		buffWrite.append("-------------- DEPÓSITO --------------\n");
+		buffWrite.append("CPF: "+remetente.getCpf()+"\n");
+		buffWrite.append("Conta: "+remetente.getContaId()+"\n");
+		buffWrite.append("Valor da transferência: R$ "+valor+"\n");
+		buffWrite.append("Valor da tarifa: R$ 0,20.\n");
+		buffWrite.append("CPF do destinatário: "+destino.getCpf()+"\n");
+		buffWrite.append("Conta do destinatário: "+destino.getContaId()+"\n");
+		buffWrite.append("Operação realizada em "+dtf.format(dataHora)+"\n");
+		buffWrite.append("------------ FIM DEPÓSITO ------------\n\n");
+		
+		buffWrite.close();
+	}
+
 }
 

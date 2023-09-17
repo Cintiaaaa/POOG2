@@ -5,18 +5,21 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import br.com.poo.banco.contas.Conta;
 import br.com.poo.banco.contas.ContaCorrente;
+import br.com.poo.banco.io.LeituraEscrita;
 import br.com.poo.banco.pessoas.Cliente;
 
 public class JTransferencia extends JFrame {
@@ -104,7 +107,17 @@ public class JTransferencia extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				c1.transferir(c1, c1, ABORT);
+				Double valor = Double.parseDouble(textField.getText());
+				String remetente = c1.getContaId();
+				String destino = textFieldNConta.getText();
+				
+				c1.transferir(c1, c1, valor);
+				try {
+					LeituraEscrita.comprovanteTransf(c1, c1, valor);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				JOptionPane.showConfirmDialog(btnNewButton_1, "Transferência realizada com sucesso.");
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 11));
