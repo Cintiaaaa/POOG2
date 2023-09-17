@@ -1,4 +1,5 @@
-# STbank
+# 🖥️ STbank 🏦
+### <img src="https://github.com/Cintiaaaa/POOG2/assets/141193384/713b6478-d58d-4151-9577-e69d09eb7349" width="1050px" />
 O Grupo 2 da Disciplina de P.O.O. da Residência em TIC/Software 2023.2 do Serratec desenvolveu um projeto STbank que é um sistema bancário desenvolvido em Java, projetado para oferecer uma ampla gama de funcionalidades financeiras e administrativas. Ele inclui recursos como abertura de contas, controle de funcionários, alterações de cargos e gerenciamento de contas correntes e poupança. O projeto também armazena os dados dos clientes e funcionários (Gerentes, Diretores e Presidente), em um banco.
 <br/>
 <br/>
@@ -11,8 +12,14 @@ Na parte voltada para os funcionários, o sistema STbank assume um papel de gere
 Em resumo, o projeto STbank é um sistema bancário Java que visa proporcionar aos clientes e funcionários um ambiente seguro e eficiente para realizar operações financeiras, gerenciar contas e funcionários e tomar decisões financeiras informadas.
 <br/>
 <br/>
+Diagrama UML:
 <br/>
-<br/>
+<div align="center">
+<img src="https://github.com/Cintiaaaa/POOG2/assets/141193384/d4b9ef3a-ad15-4754-b8f3-555d270eaa82" width="700px" />
+</div>
+<div align="center">
+Casos de Uso
+</div>
 <br/>
 <br/>
 Autores:<br/>
