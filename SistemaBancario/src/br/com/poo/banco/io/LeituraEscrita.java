@@ -44,7 +44,7 @@ public class LeituraEscrita {
 					String[] dados = linha.split(";");
 					
 										
-					if(dados[0].equalsIgnoreCase(ContaEnum.POUPANÇA.getTipoConta())) 
+					if(dados[0].equalsIgnoreCase(ContaEnum.POUPANÇA.name())) 
 					{
 						ContaPoupanca cp = new ContaPoupanca(dados[0], dados[1], dados[2], dados[3], dados[4], Double.parseDouble(dados[5]));
 						//na primeira coluna, fica o identificador unico. Nesse caso, cpf.
@@ -229,7 +229,7 @@ public class LeituraEscrita {
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
 
-		buffWrite.append("-------------- DEPÓSITO --------------\n");
+		buffWrite.append("-------------- TRANSFERÊNCIA --------------\n");
 		buffWrite.append("CPF: "+remetente.getCpf()+"\n");
 		buffWrite.append("Conta: "+remetente.getContaId()+"\n");
 		buffWrite.append("Valor da transferência: R$ "+valor+"\n");
@@ -237,7 +237,7 @@ public class LeituraEscrita {
 		buffWrite.append("CPF do destinatário: "+destino.getCpf()+"\n");
 		buffWrite.append("Conta do destinatário: "+destino.getContaId()+"\n");
 		buffWrite.append("Operação realizada em "+dtf.format(dataHora)+"\n");
-		buffWrite.append("------------ FIM DEPÓSITO ------------\n\n");
+		buffWrite.append("------------ FIM TRANSFERÊNCIA ------------\n\n");
 		
 		buffWrite.close();
 	}

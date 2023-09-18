@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -36,6 +37,19 @@ public class JContaCorrente extends JFrame {
 		telaContaCorrente.setLayout(null);
 		
 		JButton ButtonImpExt = new JButton("Imprimir Extrato");
+		ButtonImpExt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				dispose();
+				try {
+					JExtrato jExt = new JExtrato(c, c1, chequeEspecial);
+				jExt.setLocationRelativeTo(jExt);
+				jExt.setVisible(true);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
 		ButtonImpExt.setFont(new Font("Tahoma", Font.BOLD, 11));
 		ButtonImpExt.setBounds(77, 301, 127, 23);
 		telaContaCorrente.add(ButtonImpExt);

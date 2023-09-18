@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import br.com.poo.banco.contas.ContaCorrente;
+import br.com.poo.banco.io.LeituraEscrita;
 import br.com.poo.banco.pessoas.Cliente;
 import javax.swing.JCheckBox;
 
@@ -114,6 +116,11 @@ public class JDepCor extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Double valor = Double.parseDouble(textField_1VDep.getText());
 				c1.depositar(valor);
+				try {
+					LeituraEscrita.comprovanteDepCor(c1, valor);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 				JOptionPane.showConfirmDialog(btnNewButton, "Depósito realizado com sucesso");
 			}
 		});
