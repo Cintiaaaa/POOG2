@@ -16,6 +16,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class JDiretor extends JFrame {
 
@@ -59,6 +61,14 @@ public class JDiretor extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton ButtonVoltar = new JButton("Voltar");
+		ButtonVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				JLogin jLog = new JLogin();
+				jLog.setLocationRelativeTo(jLog);
+				jLog.setVisible(true);
+			}
+		});
 		ButtonVoltar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		ButtonVoltar.setBackground(UIManager.getColor("Button.background"));
 		ButtonVoltar.setBounds(211, 373, 89, 23);
@@ -77,7 +87,7 @@ public class JDiretor extends JFrame {
 		contentPane.add(JDiretor);
 		
 		JLabel Logo = new JLabel("");
-		Logo.setIcon(new ImageIcon("C:\\dev\\POO\\Workspace\\POOG2\\SistemaBancario\\imagens\\logo.png"));
+		Logo.setIcon(new ImageIcon("./imagens/logo.png"));
 		Logo.setBounds(418, 373, 56, 47);
 		contentPane.add(Logo);
 		

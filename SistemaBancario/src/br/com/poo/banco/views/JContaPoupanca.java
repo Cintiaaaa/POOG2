@@ -61,6 +61,15 @@ public class JContaPoupanca extends JFrame {
 		JContaPoupanca.add(buttonExtrato);
 		
 		JButton ButtonRendimentos = new JButton("Rendimentos " + cp.getRendimento());
+		ButtonRendimentos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				JRend jR = new JRend (c, cp);
+				jR.setLocationRelativeTo(jR);
+				jR.setVisible(true);
+				
+			}
+		});
 		ButtonRendimentos.setFont(new Font("Tahoma", Font.BOLD, 11));
 		ButtonRendimentos.setBounds(224, 299, 121, 23);
 		JContaPoupanca.add(ButtonRendimentos);
