@@ -18,6 +18,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -135,32 +136,37 @@ public class JLogin extends JFrame {
 				Cliente c = Cliente.mapaClientes.get(cpf);
 				Funcionario f = Funcionario.mapaFuncionario.get(cpf);
 				Conta c1 = Conta.mapaContas.get(cpf);
-				ContaCorrente cc = ContaCorrente.mapaContaCorrente.get(cpf);
-				ContaPoupanca cp = ContaPoupanca.mapaContaPoupanca.get(cpf);
+//				ContaCorrente cc = ContaCorrente.mapaContaCorrente.get(cpf);
+//				ContaPoupanca cp = ContaPoupanca.mapaContaPoupanca.get(cpf);
 			
 				//System.out.println(c.getCpf() + " " + c.getSenha() + " " + cpf + " " + senha);
 
 				// validação de cpf e senha
-				if ((c!= null && c.getCpf().equals(cpf) && c1.getSenha().equals(senha))
-						|| (f!=null && f.getCpf().equals(cpf) && f.getSenha().equals(senha))) {
+				if ((c!= null && c.getCpf().equals(cpf) && c1.getSenha().equals(senha))) {
 					// quem está logando
 					// cliente
 					if (comboBox.getSelectedItem().toString().equalsIgnoreCase(PessoaEnum.CLIENTE.getTipoPessoa())) {
 						// verificação de tipo de conta
 						if (c1.getTipo().equalsIgnoreCase(ContaEnum.CORRENTE.getTipoConta())) {
+							ContaCorrente cc = (ContaCorrente)c1;
 							dispose();
 							JContaCorrente jConCor = new JContaCorrente (c, cc, 500.0);
 							jConCor.setLocationRelativeTo(jConCor);
 							jConCor.setVisible(true);
-						} else {
+						} else if (c1.getTipo().equalsIgnoreCase(ContaEnum.POUPANÇA.name()))
+						{
+								ContaPoupanca cp = (ContaPoupanca)c1;
 								dispose();
 								JContaPoupanca jConPou = new JContaPoupanca(c,cp,0.00002);
 								jConPou.setLocationRelativeTo(jConPou);
 								jConPou.setVisible(true);
 							}
 					}
+				}
+				else if((f!=null && f.getCpf().equals(cpf) && f.getSenha().equals(senha)))
+				{				
 					// gerente	
-					else if (comboBox.getSelectedItem().toString().equals(PessoaEnum.GERENTE.getTipoPessoa())) {
+					if (comboBox.getSelectedItem().toString().equals(PessoaEnum.GERENTE.getTipoPessoa())) {
 						dispose();
 						JGerente jGer = new JGerente(/*f.getCargo(), f.getNome(), f.getCpf(), f.getEmail(), f.getSalario(), f.getSenha(), c1.getAgencia()*/);
 						jGer.setLocationRelativeTo(jGer);
@@ -188,6 +194,8 @@ public class JLogin extends JFrame {
 
 		} catch (ParseException e) {
 			e.printStackTrace();
+		} catch (java.lang.NullPointerException e1) {
+			e1.printStackTrace();
 		}
 
 		inputPassword = new JPasswordField();
