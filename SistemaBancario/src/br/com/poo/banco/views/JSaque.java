@@ -72,9 +72,7 @@ public class JSaque extends JFrame {
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
-				JOptionPane.showConfirmDialog(btnNewButton, "Saque realizado com sucesso.");
-
-				// adicionar telinha extra de visualizar comprov saque
+				JOptionPane.showMessageDialog(btnNewButton, "Saque realizado com sucesso.");
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));

@@ -116,7 +116,7 @@ public class JDepPoup extends JFrame {
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
-				JOptionPane.showConfirmDialog(btnNewButton, "Depósito realizado com sucesso");
+				JOptionPane.showMessageDialog(btnNewButton, "Depósito realizado com sucesso");
 			}
 		});
 		btnNewButton.setBounds(85, 285, 113, 23);
